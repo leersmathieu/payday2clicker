@@ -1,3 +1,7 @@
+////////////////////////
+//Board With Capacity//
+//////////////////////
+
 #paydayGangBoard {
     height: 27vh;
     width: 100%;
@@ -10,7 +14,7 @@
         color: white;
         font-weight: bold;
     }
-    #capSwanSong {
+    #capSwanSong, #capChameleon {
         visibility: hidden;
     }
 }

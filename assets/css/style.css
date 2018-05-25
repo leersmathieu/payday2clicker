@@ -112,7 +112,7 @@ body {
   margin-bottom: 2vh;
 }
 
-#crewHouston {
+#crewHouston, #crewWick {
   visibility: hidden;
 }
 
@@ -186,7 +186,7 @@ body {
   font-weight: bold;
 }
 
-#paydayGangBoard #capSwanSong {
+#paydayGangBoard #capSwanSong, #paydayGangBoard #capChameleon {
   visibility: hidden;
 }
 
