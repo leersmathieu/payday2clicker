@@ -20,13 +20,13 @@
 
                     <div class="crew">
                         <h4>Crew</h4>
-                        <button type="button" id="crewDallas" onclick=recruitDallas()>Recruit Dallas</button>
-                        <button type="button" id="crewChains" onclick=recruitChains()>Recruit Chains</button>
-                        <button type="button" id="crewHoxton" onclick=recruitHoxton()>Recruit Hoxton</button>
-                        <button type="button" id="crewWolf" class="separator" onclick=recruitWolf()>Recruit Wolf</button>
+                        <button type="button" id="crewDallas" onclick=recruitDallas() title="Gain 100% more money">Recruit Dallas</button>
+                        <button type="button" id="crewChains" onclick=recruitChains() title="First autoClicker and Gain 100% more money">Recruit Chains</button>
+                        <button type="button" id="crewHoxton" onclick=recruitHoxton() title="New autoClicker and Gain 100% more money">Recruit Hoxton</button>
+                        <button type="button" id="crewWolf" class="separator" onclick=recruitWolf() title="New autoClicker and Gain 100% more money">Recruit Wolf</button>
 
-                        <button type="button" id="crewHouston" onclick=recruitHouston()></button>
-                        <button type="button" id="crewWick" onclick=recruitWick()></button>
+                        <button type="button" id="crewHouston" onclick=recruitHouston() title="Gain 300% more money"></button>
+                        <button type="button" id="crewWick" onclick=recruitWick() title="Money Multiplier + 150%"></button>
 
 
                     </div>
