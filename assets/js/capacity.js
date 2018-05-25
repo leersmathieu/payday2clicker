@@ -66,8 +66,10 @@ let useChameleon = () => {
 
         setTimeout(() => {
             moneyMultiplier = (moneyMultiplier / 1.30),
-                capChameleon.style.backgroundColor = 'gray',
-                statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
+            moneyMultiplier = Math.round(moneyMultiplier * 100) / 100, //debug js
+            
+            capChameleon.style.backgroundColor = 'gray',
+            statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
         }, 30000)
 
         setTimeout(() => {
