@@ -1,3 +1,7 @@
+/////////////////////////////////
+//Left menu with crew and item//
+///////////////////////////////
+
 #menu {
     
     width: 100%;
@@ -9,9 +13,9 @@
     button {
         display: block;
         width: 100%;
-        height: 5vh;
+        height: 5.5vh;
         font-weight: bold;
-        font-size: 1.6vh;
+        font-size: 1vw;
         color: rgb(56, 56, 56);
     }
     .crew {
@@ -40,7 +44,9 @@
 .separator {
     margin-bottom: 2vh;
 }
+//CREW HIDDEN//
 
-#crewHouston {
+#crewHouston, #crewWick {
     visibility: hidden;
 }
+

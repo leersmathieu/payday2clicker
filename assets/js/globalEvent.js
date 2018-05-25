@@ -12,23 +12,30 @@ const backgroundLevel2 = () => {
 let blockerEv1 = 0 // Bloqueur d'évènement
 let blockerEv2 = 0
 let blockerEv3 = 0
+let blockerEv4 = 0
+
 
 
 const globalEvent = () => {
-    if (dallas.level >= 2 && chains.level >= 2 && hoxton.level >= 2 && wolf.level >= 2 && blockerEv1 == 0) {
+    if (dallas.level >= 1 && chains.level >= 1 && hoxton.level >= 1 && wolf.level >= 1 && blockerEv1 == 0) {
         alert('Basic Payday gang recruited \n New character unlock')
         unlockHouston()
+        unlockChameleon()
         blockerEv1++
     }
     if (dallas.level == 3 && blockerEv2 == 0) {
         unlockSwanSong()
         blockerEv2++
     }
-    //Alpha Win
-    if ( money >= 1000000 && blockerEv3 == 0){
-        alert('You WIN the Alpha of Payday Clickers \n Print Screen this alert and send it to Tamikara \n The very first winner win a prize')
+    
+    if (houston.level >= 1 && blockerEv3 == 0){
+        unlockWick()
         blockerEv3++
     }
+    // if ( money >= 3000000 && blockerEv4 == 0){ // alpha 0.2 win
+    //     alert('You WIN the Alpha 0.2 of Payday Clickers \n Print Screen this alert and send it to Tamikara \n The very first winner win a prize')
+    //     blockerEv4++
+    // }
 }
 
 const newLevel = ()  => {
