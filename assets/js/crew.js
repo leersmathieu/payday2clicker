@@ -189,6 +189,7 @@ let recruitWick = () => {
         }
 
         moneyMultiplier = moneyMultiplier + (moneyMultiplier * 0.5)
+        moneyMultiplier = Math.round(moneyMultiplier * 100) / 100
 
         money = money - wick.prix
         money = Math.round(money * 100) / 100
