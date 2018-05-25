@@ -12,7 +12,7 @@ let recruitDallas = () => {
 
     if (money > dallas.prix) {
 
-        if (dallas.level == 1) {
+        if (dallas.level == 0) {
 
             crimeMultiplier = crimeMultiplier + 1
             moneyMultiplier = moneyMultiplier + 0.5
@@ -31,6 +31,7 @@ let recruitDallas = () => {
         statsValue[3].innerText = 'Multiplicateur (crime) : ' + crimeMultiplier
         statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
         dallas.div.innerText = `Upgrade ${dallas.name} : ${dallas.prix} $ \n Level : ${dallas.level}`
+        dallas.div.title = 'Gain 50% more money'
 
     } else {
         alert('Solde insuffisant')
@@ -42,7 +43,7 @@ let recruitChains = () => {
 
     if (money > chains.prix) {
 
-        if (chains.level == 1) {
+        if (chains.level == 0) {
 
             crimeMultiplier = crimeMultiplier + 1
             moneyMultiplier = moneyMultiplier + 0.5
@@ -65,6 +66,8 @@ let recruitChains = () => {
         statsValue[3].innerText = 'Multiplicateur (crime) : ' + crimeMultiplier
         statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
         chains.div.innerText = `Upgrade ${chains.name} : ${chains.prix} $ \n Level : ${chains.level}`
+        chains.div.title = 'Gain 50% more money'
+        
 
     } else {
         alert('Solde insuffisant')
@@ -76,7 +79,7 @@ let recruitHoxton = () => {
 
     if (money > hoxton.prix) {
 
-        if (hoxton.level == 1) {
+        if (hoxton.level == 0) {
 
             crimeMultiplier = crimeMultiplier + 1
             moneyMultiplier = moneyMultiplier + 0.5
@@ -99,6 +102,8 @@ let recruitHoxton = () => {
         statsValue[3].innerText = 'Multiplicateur (crime) : ' + crimeMultiplier
         statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
         hoxton.div.innerText = `Upgrade ${hoxton.name} : ${hoxton.prix} $ \n Level : ${hoxton.level}`
+        hoxton.div.title = 'Gain 50% more money'
+        
 
     } else {
         alert('Solde insuffisant')
@@ -110,7 +115,7 @@ let recruitWolf = () => {
 
     if (money > wolf.prix) {
 
-        if (wolf.level == 1) {
+        if (wolf.level == 0) {
 
             crimeMultiplier = crimeMultiplier + 1
             moneyMultiplier = moneyMultiplier + 0.5
@@ -133,6 +138,8 @@ let recruitWolf = () => {
         statsValue[3].innerText = 'Multiplicateur (crime) : ' + crimeMultiplier
         statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
         wolf.div.innerText = `Upgrade ${wolf.name} : ${wolf.prix} $ \n Level : ${wolf.level}`
+        wolf.div.title = 'Gain 50% more money'
+        
 
     } else {
         alert('Solde insuffisant')
@@ -144,7 +151,7 @@ let recruitHouston = () => {
 
     if (money > houston.prix) {
 
-        if (houston.level == 1) {
+        if (houston.level == 0) {
 
             crimeMultiplier = crimeMultiplier + 1
 
@@ -162,6 +169,8 @@ let recruitHouston = () => {
         statsValue[3].innerText = 'Multiplicateur (crime) : ' + crimeMultiplier
         statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
         houston.div.innerText = `Upgrade ${houston.name} : ${houston.prix} $ \n Level : ${houston.level}`
+        houston.div.title = 'Gain 300% more money'
+        
 
     } else {
         alert('Solde insuffisant')
@@ -173,7 +182,7 @@ let recruitWick = () => {
 
     if (money > wick.prix) {
 
-        if (wick.level == 1) {
+        if (wick.level == 0) {
 
             crimeMultiplier = crimeMultiplier + 1
 
@@ -191,6 +200,7 @@ let recruitWick = () => {
         statsValue[3].innerText = 'Multiplicateur (crime) : ' + crimeMultiplier
         statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
         wick.div.innerText = `Upgrade ${wick.name} : ${wick.prix} $ \n Level : ${wick.level}`
+        wick.div.title = 'Money Multiplier upped by 50%'
 
     } else {
         alert('Solde insuffisant')

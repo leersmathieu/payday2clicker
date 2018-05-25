@@ -26,7 +26,7 @@
                         <button type="button" id="crewWolf" class="separator" onclick=recruitWolf() title="New autoClicker and Gain 100% more money">Recruit Wolf</button>
 
                         <button type="button" id="crewHouston" onclick=recruitHouston() title="Gain 300% more money"></button>
-                        <button type="button" id="crewWick" onclick=recruitWick() title="Money Multiplier + 150%"></button>
+                        <button type="button" id="crewWick" onclick=recruitWick() title="Money Multiplier upped by 50%"></button>
 
 
                     </div>

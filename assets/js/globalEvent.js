@@ -32,10 +32,10 @@ const globalEvent = () => {
         unlockWick()
         blockerEv3++
     }
-    if ( money >= 3000000 && blockerEv4 == 0){ // alpha 0.2 win
-        alert('You WIN the Alpha 0.2 of Payday Clickers \n Print Screen this alert and send it to Tamikara \n The very first winner win a prize')
-        blockerEv4++
-    }
+    // if ( money >= 3000000 && blockerEv4 == 0){ // alpha 0.2 win
+    //     alert('You WIN the Alpha 0.2 of Payday Clickers \n Print Screen this alert and send it to Tamikara \n The very first winner win a prize')
+    //     blockerEv4++
+    // }
 }
 
 const newLevel = ()  => {
