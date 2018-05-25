@@ -1,0 +1,16 @@
+#paydayGangBoard {
+    height: 27vh;
+    width: 100%;
+    background-image: url('../img/gang.jpg');
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding-top: 1vh;
+    h2 {
+        color: white;
+        font-weight: bold;
+    }
+    #capSwanSong {
+        visibility: hidden;
+    }
+}

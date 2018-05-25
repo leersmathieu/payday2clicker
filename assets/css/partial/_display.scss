@@ -1,0 +1,43 @@
+#display {
+    width: 100%;
+    // background-color: red;
+    text-align: center;
+    height: 60%;
+    // margin-top: 10%;
+    #displayImgBack {
+        height: 100%;
+        // padding-top: 45%;
+        background-image: url('../img/jewelrystore.png');
+        background-position: center;
+        background-size: cover;
+        #displayAnim {
+            width: 80%;
+            height: 100%;
+            background-image: url("../img/crime.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: auto;
+            .axe-x-y {
+                font-size: 150%;
+                color: rgb(25, 71, 25);
+                font-weight: bold;
+                user-select: none;
+            }
+            &:active {
+                width: 100%;
+                opacity: 0.5;
+            }
+        }
+    }   
+    // img {
+    //     height: 100%;
+    //     width: 100%;
+    // }
+}
+
+// #gangImg {
+//     height: 27vh;
+//     width: 100%;
+// }
+
