@@ -55,8 +55,8 @@
                     </div>
                     <div id="paydayGangBoard">
                         <h2>Capacity :</h2>
-                        <button type="button" id="capSwanSong" onclick=useSwanSong()>Swan Song</button>
-                        <button type="button" id="capChameleon" onclick=useChameleon()>Chameleon</button>
+                        <button type="button" id="capSwanSong" onclick=useSwanSong() title="Money * 2 for 6s CD: 60s">Swan Song</button>
+                        <button type="button" id="capChameleon" onclick=useChameleon() title="Money * 1.3 for 30s CD: 180s">Chameleon</button>
 
                     </div>
                 </div>
@@ -83,7 +83,7 @@
         </div>
     </div>
     <footer>
-        Payday Clicker ALPHA v0.2
+        Payday Clicker ALPHA v0.2.1
     </footer>
 
 
