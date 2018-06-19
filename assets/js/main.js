@@ -73,6 +73,7 @@ let moneyMultiplier = 1
 
 ////////////////////////////////////////////////////////////
                 //injection préliminaire//
+
 dallas.div.innerText += ' : ' + dallas.prix + ' $ \n Level : ' + dallas.level
 chains.div.innerText += ' : ' + chains.prix + ' $ \n Level : ' + chains.level
 hoxton.div.innerText += ' : ' + hoxton.prix + ' $ \n Level : ' + hoxton.level
@@ -143,7 +144,7 @@ let cursorClick = () => {
                     //Auto Clickers//
 
 let autoClickBase = () => {
-    let moneyAdditioner = Math.floor(Math.random() * 10) + 1
+    moneyAdditioner = Math.floor(Math.random() * 10) + 1
 
     crime = crime + (crimeAdditioner * crimeMultiplier)
     totalMoney = totalMoney + (moneyAdditioner * moneyMultiplier)

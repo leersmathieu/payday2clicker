@@ -31,7 +31,11 @@ let useSwanSong = () => {
         capSwanSong.style.backgroundColor = 'gray',
         statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier }, 6000)
 
-        setTimeout(() => { resetSwanSong() }, 30000)
+        setTimeout(() => { 
+            resetSwanSong() 
+            capSwanSong.style.backgroundColor = 'rgb(255, 255, 51)'
+            
+        }, 60000)
 
     } else if (timerSwanSong == 'unavailable') {
         alert('The capacity is reloading')
@@ -39,14 +43,15 @@ let useSwanSong = () => {
 
 }
 
+
+////CHAMELEON
+
 const resetChameleon = () => {
 
     timerChameleon = 'available'
     capChameleon.style.opacity = 1
 
 }
-
-////CHAMELEON
 
 let unlockChameleon = () => {
 
@@ -58,6 +63,8 @@ let useChameleon = () => {
     if (timerChameleon == 'available') {
 
         moneyMultiplier = (moneyMultiplier * 1.30)
+        moneyMultiplier = Math.round(moneyMultiplier * 100) / 100, //debug js
+        
         statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
         capChameleon.style.opacity = 0.5
         capChameleon.style.backgroundColor = 'red'
@@ -74,7 +81,7 @@ let useChameleon = () => {
 
         setTimeout(() => {
             resetChameleon()
-        }, 60000)
+        }, 180000)
 
     } else if (timerChameleon == 'unavailable') {
         alert('The capacity is reloading')

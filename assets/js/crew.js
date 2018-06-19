@@ -194,7 +194,7 @@ let recruitWick = () => {
         money = money - wick.prix
         money = Math.round(money * 100) / 100
 
-        wick.prix += 100000
+        wick.prix *= 2 
         wick.level++
 
         statsValue[2].innerText = 'Compte en banque : ' + money + ' $'

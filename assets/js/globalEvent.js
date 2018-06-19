@@ -1,9 +1,20 @@
 //////////////////////////BACKGROUND LEVEL///////////////////////////
 
+let blockMap1 = 0
+
 const backgroundLevel2 = () => {
 
     displayImgBack.style.backgroundImage = "url('assets/img/bank.jpg')"
     alert('New level Unlock !')
+
+}
+
+const backgroundLevel3 = () => {
+
+    displayImgBack.style.backgroundImage = "url('assets/img/shadowRaid.jpg')"
+    alert('New level Unlock !')
+    blockMap1++
+    
 
 }
 
@@ -42,10 +53,12 @@ const newLevel = ()  => {
     if (ECM.etat == 'unlock' && dallas.level >= 3) {
         backgroundLevel2()
         ECM.etat = 'Finish'
+    } else if (ECM.etat == 'Finish' && totalMoney >= 200000 && blockMap1 == 0){
+        backgroundLevel3()
     }
 } 
 
-window.setInterval(globalEvent, 100)
-window.setInterval(newLevel, 100)
+window.setInterval(globalEvent, 400)
+window.setInterval(newLevel, 400)
 
 
