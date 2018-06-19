@@ -81,6 +81,7 @@ let useChameleon = () => {
 
         setTimeout(() => {
             resetChameleon()
+            capChameleon.style.backgroundColor = 'rgb(255, 255, 51)'            
         }, 180000)
 
     } else if (timerChameleon == 'unavailable') {
