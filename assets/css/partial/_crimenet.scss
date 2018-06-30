@@ -4,8 +4,8 @@
 
 #crimeNet {
     text-align: center;
+    height: 15%;
     width: 100%;
-    height: 10%;
     padding-top: 4%;
     border-bottom: $borderMenu;
     background-color: $crimeNetColor;
@@ -17,6 +17,15 @@
             font-size: 200%;
             font-weight: bold;
             color: $textColorCrimeNet;
+            font-family: 'payday';
 
+    }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 720px) {
+    #crimeNet {
+        h1 {
+            font-size: 80px;             
+        }
     }
 }

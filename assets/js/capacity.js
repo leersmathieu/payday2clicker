@@ -7,6 +7,7 @@ const resetSwanSong = () => {
     timerSwanSong = 'available'
     capSwanSong.style.opacity = 1
 
+
 }
 
 let unlockSwanSong = () => {

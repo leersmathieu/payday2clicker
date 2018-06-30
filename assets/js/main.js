@@ -17,7 +17,7 @@ let statsValue = document.querySelectorAll('.statsValue')
 class Heister {
     constructor(name, div, prix) {
         this.name = name
-        this.div = document.querySelector(div)
+        this. div =document.querySelector(div)
         this.prix = prix
         this.level = 0
         this.clickAuto = undefined
@@ -25,7 +25,7 @@ class Heister {
 }
 
 let dallas = new Heister ('Dallas', '#crewDallas', 150)
-let chains = new Heister ('Chains', '#crewChains', 900)
+let chains = new Heister ('Chains', '#crewChains', 900) // => Best one
 let hoxton = new Heister ('Hoxton', '#crewHoxton', 3000)
 let wolf = new Heister('Wolf', '#crewWolf', 9000)
 
@@ -162,3 +162,32 @@ let autoClickBase = () => {
 
 }
 
+/** State */
+const Stats = new Stats();
+
+/** - Timer Tick - */
+let Tick = () =>{
+    /** placer le code pour le timer ici */
+    
+
+    queueNewFrame();    
+};
+let tick = -1;
+let queueNewFrame = () => {
+
+    if (window.requestAnimationFrame)
+        tick = window.requestAnimationFrame(Tick);
+    else if (window.msRequestAnimationFrame)
+        tick = window.msRequestAnimationFrame(Tick);
+    else if (window.webkitRequestAnimationFrame)
+        tick = window.webkitRequestAnimationFrame(Tick);
+    else if (window.mozRequestAnimationFrame)
+        tick = window.mozRequestAnimationFrame(Tick);
+    else if (window.oRequestAnimationFrame)
+        tick = window.oRequestAnimationFrame(Tick);
+    else {
+        queueNewFrame = function() { };
+        tick = window.setInterval(Tick, 16.7);
+    }
+};
+queueNewFrame();
