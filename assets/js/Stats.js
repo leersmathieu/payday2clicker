@@ -1,4 +1,4 @@
-class Stats
+class Stat
 {
     constructor()
     {
@@ -26,9 +26,9 @@ class Stats
     set CrimeMultiplier(value){this.crimeMultiplier = value; this.div[3].innerText = 'Multiplicateur (crime) : ' + this.CrimeMultiplier}
 
     get Money(){return this.money;}
-    set Money(value){this.money = value; this.div[2].innerText = 'Compte en banque : ' + this.Money + ' $'}
+    set Money(value){this.money = value; this.div[2].innerText = 'Compte en banque : ' + this.money + ' $'}
     get TotalMoney(){return this.totalMoney;}
-    set TotalMoney(value){this.totalMoney = value; this.div[1].innerText = 'Argent Récolté : ' + this.TotalMoney + ' $'}
+    set TotalMoney(value){this.totalMoney = value; this.div[1].innerText = 'Argent Récolté : ' + this.totalMoney + ' $'}
     get MoneyAdditioner(){return this.moneyAdditioner;}
     set MoneyAdditioner(value){this.moneyAdditioner = value;}
     get MoneyMultiplier(){return this.moneyMultiplier;}
@@ -45,7 +45,7 @@ class Stats
     onDraw()
     {
         this.div[0].innerText = 'Crimes Commis : ' + this.Crime;
-        this.div[1].innerText = 'Argent Récolté : ' + this.TotalMoney + ' $';
+        this.div[1].innerText = 'Argent Récolté : ' + this.totalMoney + ' $';
         this.div[2].innerText = 'Compte en banque : ' + this.Money + ' $';
         this.div[3].innerText = 'Multiplicateur (crime) : ' + this.CrimeMultiplier;
         this.div[4].innerText = 'Multiplicateur (money) : ' + this.MoneyMultiplier;

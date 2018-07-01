@@ -5,6 +5,11 @@
     src: url('../fonts/Payday.ttf');
 }
 
+@font-face {
+    font-family: 'thelucky';
+    src: url('../fonts/LUCKY-TYPEWRITER.ttf');
+}
+
 //MAIN CSS//
 
 body {
@@ -57,15 +62,38 @@ body {
 .menu-title {
     
     text-align: center;
-    padding: 10px;
+    padding-top: 2%;
     height: 10%;
     font-family: 'payday';
         // border-bottom: $borderMenu;
+    border-top:0px ridge #2a5da3;
+    border-right:0px ridge #2a5da3;
+    border-bottom:8px ridge #2a5da3;
+    border-left:0px ridge #2a5da3;
     background-color: $menuColor;
     font-size: 6vh;
+    
+    background: linear-gradient(to bottom, #1e5799 0%,#2989d8 54%,#62ace5 100%);
 }
 
 #backGround {
     height: 100%;
     background-color: $backgroundClicker;
 }
+
+.carousel-indicators {
+    bottom: -10px;
+}
+                               
+
+@media screen and (min-width: 1000px) and (min-height: 600px) {
+    .menu-title {
+        padding-top: 4%;
+    }
+    .carousel-indicators {
+        bottom: -32px;
+    }
+}
+
+
+                               

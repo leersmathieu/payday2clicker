@@ -1,8 +1,8 @@
 class Heister extends Entity
 {
-    constructor(name, price, div, cost, buyCrimeMultiplier=true, buyMoneyMultiplier=true, crimeMultiplier=1, moneyMultiplier=0.5)
+    constructor(name, div, price, cost, buyCrimeMultiplier=true, buyMoneyMultiplier=true, crimeMultiplier=1, moneyMultiplier=0.5)
     {
-        super(name, price, div)
+        super(name, div, price)
         this.level = 0;
         this.clickAuto = false;
         this.clickAutoInterval = 0;
@@ -29,7 +29,7 @@ class Heister extends Entity
         return this.clickAuto;
     }
 
-    set clickAuto(value)
+    set ClickAuto(value)
     {
         this.clickAuto = value;       
     }
@@ -68,9 +68,9 @@ class Heister extends Entity
                 if(this.buyMoneyMultiplier)
                     Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.moneyMultiplier;
             }
-            if (chains.clickAuto === undefined) 
+            if (this.clickAuto === undefined) 
             {
-                chains.clickAuto = window.setInterval(autoClickBase, 2000)
+                this.clickAuto = window.setInterval(autoClickBase, 2000)
             }
             
             Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.moneyMultiplier;

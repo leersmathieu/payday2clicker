@@ -1,11 +1,12 @@
 class Item extends Entity
 {
-    constructor(name, price, div, maxCount, multiplier) {
-        super(name, price, div)
+    constructor(name, div, price, maxCount, multiplier)
+   { 
+        super(name, div, price)
         this.counter = 0;
         this.state = false;
-        this.maxCount;
-        this.multiplier;
+        this.maxCount = maxCount;
+        this.multiplier = multiplier;
     }
     
     get Counter()
@@ -30,7 +31,7 @@ class Item extends Entity
 
     get MaxCount()
     {
-        return this.MaxCount;
+        return this.maxCount;
     }
 
     set MaxCount(value)
@@ -70,11 +71,11 @@ class Item extends Entity
         if (this.counter <= this.MaxCount) {
             if (this.price <= Stats.Money) {
                 this.state = true;
-                Stats.moneyMultiplier = Stats.moneyMultiplier + this.multiplier;
-                Stats.moneyMultiplier = Math.round(Stats.moneyMultiplier * 100) / 100;
+                let moneymultiplier = Stats.moneyMultiplier + this.multiplier;
+                Stats.moneyMultiplier = Math.round(moneymultiplier * 100) / 100;
 
-                Stats.Money = Stats.Money - this.price;
-                Stats.Money = Math.round(Stats.Money * 100) / 100;
+                let statsmoney = Stats.Money - this.price;
+                Stats.Money = Math.round(statsmoney * 100) / 100;
 
                 this.onDraw();
 

@@ -1,9 +1,9 @@
 class Entity
 {
-    constructor(name, price, div) {
+    constructor(name, div, price) {
         this.name = name;
         this.price = price;
-        this.div = div;
+        this.div = document.querySelector(div);
 
         /**temps écouler depuis le dernier tick */
         this.lastTick = Date.now();         //dernier tick
@@ -48,10 +48,10 @@ class Entity
     {
         this.tick = 0;
     }
-    Visibility = () =>{
+    Visibility() {
         this.div.style.visibility = 'visible'
     }
-    Hidden = () =>{
+    Hidden() {
         this.div.style.visibility = 'hidden'
     }
 
@@ -66,4 +66,9 @@ class Entity
     onDraw(){}
     /**click sur l'élément */
     onClick(){}
+
+    onUnLock()
+    {
+        this.div.style.visibility = 'visible'
+    }
 }

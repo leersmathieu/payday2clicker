@@ -4,6 +4,11 @@
   src: url("../fonts/Payday.ttf");
 }
 
+@font-face {
+  font-family: 'thelucky';
+  src: url("../fonts/LUCKY-TYPEWRITER.ttf");
+}
+
 body {
   background-color: #303030;
   width: 100%;
@@ -51,16 +56,35 @@ body {
 
 .menu-title {
   text-align: center;
-  padding: 10px;
+  padding-top: 2%;
   height: 10%;
   font-family: 'payday';
+  border-top: 0px ridge #2a5da3;
+  border-right: 0px ridge #2a5da3;
+  border-bottom: 8px ridge #2a5da3;
+  border-left: 0px ridge #2a5da3;
   background-color: #1494E4;
   font-size: 6vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1e5799), color-stop(54%, #2989d8), to(#62ace5));
+  background: linear-gradient(to bottom, #1e5799 0%, #2989d8 54%, #62ace5 100%);
 }
 
 #backGround {
   height: 100%;
   background-color: #b5c5d4;
+}
+
+.carousel-indicators {
+  bottom: -10px;
+}
+
+@media screen and (min-width: 1000px) and (min-height: 600px) {
+  .menu-title {
+    padding-top: 4%;
+  }
+  .carousel-indicators {
+    bottom: -32px;
+  }
 }
 
 #crimeNet {
@@ -75,7 +99,7 @@ body {
 
 #crimeNet h1 {
   text-transform: capitalize;
-  font-size: 200%;
+  font-size: 150%;
   font-weight: bold;
   color: #ffff35;
   font-family: 'payday';
@@ -107,6 +131,10 @@ body {
   font-size: 120%;
   padding-bottom: 2%;
   padding-top: 2%;
+  padding-left: 5%;
+  font-family: 'thelucky';
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9dd95), color-stop(43%, #f8b500), color-stop(65%, #f8b500), to(#fbdf93));
+  background: linear-gradient(to bottom, #f9dd95 0%, #f8b500 43%, #f8b500 65%, #fbdf93 100%);
 }
 
 #menu button {
@@ -214,6 +242,8 @@ body {
 #paydayGangBoard h2 {
   color: white;
   font-weight: bold;
+  font-size: 13px;
+  text-shadow: 0px 0px 10px #fdff00;
 }
 
 #paydayGangBoard #capSwanSong, #paydayGangBoard #capChameleon {
@@ -226,6 +256,12 @@ body {
   padding: 10px;
   margin-top: 10px;
   font-weight: bold;
+}
+
+@media screen and (min-width: 1000px) and (min-height: 600px) {
+  #paydayGangBoard h2 {
+    font-size: 23px;
+  }
 }
 
 footer {

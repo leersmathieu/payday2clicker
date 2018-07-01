@@ -1,5 +1,5 @@
 //////////////////////////BACKGROUND LEVEL///////////////////////////
-
+window.onload = () => {
 let blockMap1 = 0
 
 const backgroundLevel2 = () => {
@@ -58,7 +58,6 @@ const newLevel = ()  => {
     }
 } 
 
-window.setInterval(globalEvent, 400)
-window.setInterval(newLevel, 400)
-
-
+// window.setInterval(globalEvent, 400)
+// window.setInterval(newLevel, 400)
+}
