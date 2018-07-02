@@ -1,22 +1,32 @@
 class Capacity
 {
-    constructor(div, timeUse=0, timeReset=0, moneyMultiplier=0)
+    
+    /**
+     * 
+     * @param {selector} div 
+     * @param {int} duration  - duration of capacity is active
+     * @param {int} reloading  - cooldown
+     */
+    
+    constructor(div, duration=0, reloading=0)
     {
         this.div = document.querySelector(div);
         this.available = true;
-        this.moneyMultiplier = moneyMultiplier;
         
         /**temps écouler depuis le dernier tick */
         this.lastTick = Date.now();         //dernier tick
         this.currentTick = Date.now();      //milliSecond depuis le dernier click
         
-        this.activeUse = false;
-        this.tickUse = 0;
-        this.timeUse = timeUse;
-        /**reset */
+        //End
+        this.activeEnd = false;
+        this.tickEnd = 0;
+        this.duration = duration;
+        /**Reset */
         this.activeReset = false;
         this.tickReset = 0;
-        this.timeReset = timeReset;
+        this.reloading = reloading;
+
+        this.effect = null;
     }
 
     /**Timer */
@@ -24,18 +34,20 @@ class Capacity
     {
         this.currentTick = Date.now() - this.lastTick;
         this.lastTick = Date.now();
-        this.tickUse += this.currentTick;
+        this.tickEnd += this.currentTick;
 
-        this.tickUse += this.currentTick;
-        if(this.activeUse && this.tickUse >= this.timeUse)
+        this.tickEnd += this.currentTick;
+        if(this.activeEnd && this.tickEnd >= this.duration)
         {
-            this.tickUse -= this.timeUse;
-            this.onUse();
+            this.tickEnd -= this.duration;
+            this.activeEnd = false;
+            this.onEnd();
         }
         this.tickReset += this.currentTick;
-        if(this.activeReset && this.tickReset >= this.timeReset)
+        if(this.activeReset && this.tickReset >= this.reloading)
         {
-            this.tickReset -= this.timeReset;
+            this.tickReset -= this.reloading;
+            this.activeReset = false;
             this.onReset();
         }
     }
@@ -46,13 +58,14 @@ class Capacity
     {
         if (this.available){
             this.available = false;
-            Stats.MoneyMultiplier *= this.moneyMultiplier;
             this.div.style.opacity = 0.5
             this.div.style.backgroundColor = 'red'
 
-            /** lance le timer de la fonction onUse() */
-            this.activeUse = true;
-            this.tickUse = 0;
+            /** ajout du bonus  */
+            onStart();
+            /** lance le timer de la fonction onEnd() */
+            this.activeEnd = true;
+            this.tickEnd = 0;
             /** lance le timer de la fonction onReset() */
             this.activeReset = true;
             this.tickReset = 0;
@@ -62,22 +75,17 @@ class Capacity
         }
     }
 
-    onUse()
-    {
-        let moneymultiplier = (Stats.MoneyMultiplier / 1.30);
-        Stats.MoneyMultiplier = Math.round(moneymultiplier * 100) / 100;
-    }
-    onReset()
-    {
-        this.available = true;
-        this.div.style.opacity = 1;
-        this.div.style.backgroundColor = 'rgb(255, 255, 51)';
-        this.activeReset = false;
-    }
-
     onUnLock()
     {
         this.div.style.visibility = 'visible';
     }
 
+    onStart(){}
+    onEnd(){}
+    onReset()
+    {
+        this.available = true;
+        this.div.style.opacity = 1;
+        this.div.style.backgroundColor = 'rgb(255, 255, 51)';
+    }
 }

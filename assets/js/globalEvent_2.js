@@ -80,7 +80,6 @@ const eventTick = () => {
                     //Fonction Clicker//
 
 let cursorClick = () => {
-
     Stats.MoneyAdditioner = Math.floor(Math.random() * 10) + 1
     // console.log(moneyAdditioner)
 

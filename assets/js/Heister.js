@@ -1,19 +1,35 @@
 class Heister extends Entity
 {
-    constructor(name, div, price, cost, buyCrimeMultiplier=true, buyMoneyMultiplier=true, crimeMultiplier=1, moneyMultiplier=0.5)
+
+    /**
+     * 
+     * @param {String} name - name of the heister
+     * @param {Selector} div 
+     * @param {Int} price - basic price
+     * @param {Int} priceUppgrade - added price (price = price + priceUppgrade)
+     * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s )
+     * @param {Int} moneyMultiplier - bonus money multiplier
+     * @param {Boolean} buyCrimeMultiplier  - true = bonus crime for purchase only 
+     * @param {Boolean} buyMoneyMultiplier  - true = bonus money for purchase only
+     */
+
+
+
+    constructor(name, div, price, priceUppgrade, clickAuto = 0, moneyMultiplier = 0.5, buyCrimeMultiplier = true, buyMoneyMultiplier = true )
     {
         super(name, div, price)
+
         this.level = 0;
-        this.clickAuto = false;
-        this.clickAutoInterval = 0;
-
-        this.cost = cost;
-        this.buyCrimeMultiplier = crimeMultiplier;
-        this.buyMoneyMultiplier = moneyMultiplier;
-        this.crimeMultiplier = crimeMultiplier;
+        this.crimeMultiplier = 1;
+    
+        this.clickAutoInterval = clickAuto;
+        this.priceUppgrade = priceUppgrade;
         this.moneyMultiplier = moneyMultiplier;
-    }
+        this.buyCrimeMultiplier = buyCrimeMultiplier;
+        this.buyMoneyMultiplier = buyMoneyMultiplier; 
 
+    }
+    
     get Level()
     {
         return this.level;
@@ -24,15 +40,7 @@ class Heister extends Entity
         this.level = value;
     }
 
-    get ClickAuto()
-    {
-        return this.clickAuto;
-    }
-
-    set ClickAuto(value)
-    {
-        this.clickAuto = value;       
-    }
+ 
 
     // get CrimeMultiplier(){return this.crimeMultiplier;}
     // set CrimeMultiplier(value){this.crimeMultiplier = value; this.div[3].innerText = 'Multiplicateur (crime) : ' + this.CrimeMultiplier}
@@ -44,9 +52,9 @@ class Heister extends Entity
     onTick()
     {
         super.onTick();
-        if(this.clickAuto && this.tick >= this.clickAutoInterval)
+        if(this.active && this.clickAutoInterval !== 0 && this.tick >= this.clickAutoInterval)
         {
-                this.click -= this.clickAutoInterval;
+                this.tick -= this.clickAutoInterval;
                 this.onAutoClick();
         }
     }
@@ -67,18 +75,21 @@ class Heister extends Entity
                     Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.crimeMultiplier;
                 if(this.buyMoneyMultiplier)
                     Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.moneyMultiplier;
+                this.tick = 0;
+                this.active=true
             }
-            if (this.clickAuto === undefined) 
-            {
-                this.clickAuto = window.setInterval(autoClickBase, 2000)
-            }
+            // if (this.clickAuto === undefined) 
+            // {
+            //     this.clickAuto = window.setInterval(autoClickBase, 2000)
+            // }
             
             Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.moneyMultiplier;
 
             let statsmoney = Stats.Money - this.price
-            Stats.Money = Math.round(statsmoney * 100) / 100 //(debug)
+            Stats.Money = roundNumber(statsmoney);
+            // Stats.Money = Math.round(statsmoney * 100) / 100 //(debug)
 
-            this.price = this.price + this.cost;
+            this.price = this.price + this.priceUppgrade;
             this.level++
 
             this.onDraw();
@@ -91,6 +102,7 @@ class Heister extends Entity
         Stats.MoneyAdditioner = Math.floor(Math.random() * 10) + 1
 
         Stats.Crime = Stats.Crime + (Stats.CrimeAdditioner * Stats.CrimeMultiplier)
+
         let totalmoney = Stats.TotalMoney + (Stats.MoneyAdditioner * Stats.MoneyMultiplier)
         Stats.TotalMoney = Math.round(totalmoney * 100) / 100 // correction bug js
 

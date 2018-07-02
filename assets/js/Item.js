@@ -9,45 +9,45 @@ class Item extends Entity
         this.multiplier = multiplier;
     }
     
-    get Counter()
-    {
-        return this.counter;
-    }
+    // get Counter()
+    // {
+    //     return this.counter;
+    // }
 
-    set Counter(value)
-    {
-        this.counter = value;                
-    }
+    // set Counter(value)
+    // {
+    //     this.counter = value;                
+    // }
 
-    get State()
-    {
-        return this.state;
-    }
+    // get State()
+    // {
+    //     return this.state;
+    // }
 
-    set State(value)
-    {
-        this.state = value;
-    }
+    // set State(value)
+    // {
+    //     this.state = value;
+    // }
 
-    get MaxCount()
-    {
-        return this.maxCount;
-    }
+    // get MaxCount()
+    // {
+    //     return this.maxCount;
+    // }
 
-    set MaxCount(value)
-    {
-        this.maxCount = value;
-    }
+    // set MaxCount(value)
+    // {
+    //     this.maxCount = value;
+    // }
 
-    get Multiplier()
-    {
-        return this.multiplier;
-    }
+    // get Multiplier()
+    // {
+    //     return this.multiplier;
+    // }
 
-    set Multiplier(value)
-    {
-        this.multiplier = value;
-    }
+    // set Multiplier(value)
+    // {
+    //     this.multiplier = value;
+    // }
 
     /**Timer */
     onTick()

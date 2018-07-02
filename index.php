@@ -126,13 +126,14 @@
     </footer>
 
         <script src="assets/js/Stats.js"></script>
-        <script src="assets/js/main_2.js"></script>
         <script src="assets/js/globalEvent_2.js"></script>
         <script src="assets/js/Capacity_2.js"></script>
         <script src="assets/js/Entity.js"></script>
         <script src="assets/js/Heister.js"></script>
         <script src="assets/js/Item.js"></script>
-
+        <script src="assets/js/AllCapacity.js"></script>
+        <script src="assets/js/main_2.js"></script>
+        
     <!-- <script src="assets/js/main.js"></script>
     <script src="assets/js/crew.js"></script>
     <script src="assets/js/stuff.js"></script>
