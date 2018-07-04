@@ -56,8 +56,18 @@ window.onload = () => {
     wick = new Heister('John Wick', '#crewWick', 200000, 2000000, 0, "Money Multiplier upped by 50 %", 10)
 
     //ITEM
-    transportBag = new Item('Transport Bag', '#itemTransportBag', 300, 10, 0.2)
-    ECM = new Item('E.C.M', '#itemECM', 2000, 0, 1)
+
+    /**
+     * 
+     * @param {string} name 
+     * @param {selector} div 
+     * @param {int} price - prix de l'item
+     * @param {int} maxCount - number of item can we buy
+     * @param {int} multiplier - bonus of item
+     */
+
+    transportBag = new Item('Transport Bag', '#itemTransportBag', 300, 10, 0.3)
+    ECM = new Item('E.C.M', '#itemECM', 2000, 1, 1)
 
 
 

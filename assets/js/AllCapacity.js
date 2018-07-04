@@ -21,3 +21,4 @@ class MultiplierMoneyMultiplier extends Capacity
         // Stats.MoneyMultiplier = Math.round(moneymultiplier * 100) / 100;
     }
 }
+

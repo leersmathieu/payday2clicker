@@ -1,10 +1,18 @@
 class Item extends Entity
 {
+    /**
+     * 
+     * @param {string} name 
+     * @param {selector} div 
+     * @param {int} price - prix de l'item
+     * @param {int} maxCount - number of item can we buy
+     * @param {int} multiplier - bonus of item
+     */
     constructor(name, div, price, maxCount, multiplier)
    { 
         super(name, div, price)
         this.counter = 0;
-        this.state = false;
+        this.state = false; // false = unlock; true = lock;
         this.maxCount = maxCount;
         this.multiplier = multiplier;
     }
@@ -19,15 +27,15 @@ class Item extends Entity
     //     this.counter = value;                
     // }
 
-    // get State()
-    // {
-    //     return this.state;
-    // }
+    get State()
+    {
+        return this.state;
+    }
 
-    // set State(value)
-    // {
-    //     this.state = value;
-    // }
+    set State(value)
+    {
+        this.state = value;
+    }
 
     // get MaxCount()
     // {
@@ -68,14 +76,14 @@ class Item extends Entity
     /**Achat de l'item */
     onBuy()
     {
-        if (this.counter <= this.MaxCount) {
+        if (this.counter <= this.maxCount) {
             if (this.price <= Stats.Money) {
                 this.state = true;
-                let moneymultiplier = Stats.moneyMultiplier + this.multiplier;
-                Stats.moneyMultiplier = Math.round(moneymultiplier * 100) / 100;
+                let moneymultiplier = Stats.MoneyMultiplier + this.multiplier;
+                Stats.MoneyMultiplier = roundNumber(moneymultiplier);
 
                 let statsmoney = Stats.Money - this.price;
-                Stats.Money = Math.round(statsmoney * 100) / 100;
+                Stats.Money = roundNumber(statsmoney);
 
                 this.onDraw();
 
