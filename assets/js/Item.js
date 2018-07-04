@@ -71,17 +71,14 @@ class Item extends Entity
     /**click sur l'élément */
     onClick()
     {
-        this.onBuy();
-    }
-    /**Achat de l'item */
-    onBuy()
-    {
         if (this.counter <= this.maxCount) {
             if (this.price <= Stats.Money) {
                 this.state = true;
-                let moneymultiplier = Stats.MoneyMultiplier + this.multiplier;
-                Stats.MoneyMultiplier = roundNumber(moneymultiplier);
-
+                // let moneymultiplier = Stats.MoneyMultiplier + this.multiplier;
+                // Stats.MoneyMultiplier = roundNumber(moneymultiplier);
+                if(this.bonus != null){
+                    this.bonus.onExecute();
+                }
                 let statsmoney = Stats.Money - this.price;
                 Stats.Money = roundNumber(statsmoney);
 

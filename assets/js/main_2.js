@@ -48,6 +48,7 @@ window.onload = () => {
      */
 
     dallas = new Heister('Dallas', '#crewDallas', 150, 300)
+    dallas.Bonus = new AddToMultiplier(dallas, 5);
     chains = new Heister('Chains', '#crewChains', 900, 400, 3000) // => Best one
     hoxton = new Heister('Hoxton', '#crewHoxton', 3000, 500, 2500)
     wolf = new Heister('Wolf', '#crewWolf', 9000, 600, 2000)

@@ -129,6 +129,7 @@
         <script src="assets/js/globalEvent_2.js"></script>
         <script src="assets/js/Capacity_2.js"></script>
         <script src="assets/js/Entity.js"></script>
+        <script src="assets/js/Bonus.js"></script>
         <script src="assets/js/Heister.js"></script>
         <script src="assets/js/Item.js"></script>
         <script src="assets/js/AllCapacity.js"></script>

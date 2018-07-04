@@ -16,7 +16,12 @@ class Entity
         this.lastTick = Date.now();         //dernier tick
         this.currentTick = Date.now();      //milliSecond depuis le dernier click
         this.tick = 0;                      //total de tick depuis le dernier reset. (cf : resetTick() )
+    
+        /**fonction bonus */
+        this.bonus = null; //this.bonus = new Bonus(this);
     }
+    get Bonus(){ return this.bonus; }
+    set Bonus(value){ this.bonus = value; }
     // get Name()
     // {
     //     return this.name;
@@ -82,7 +87,10 @@ class Entity
     /**draw div */
     onDraw(){}
     /**click sur l'élément */
-    onClick(){}
+    onClick()
+    {
+        this.bonus();
+    }
 
     onUnLock()
     {

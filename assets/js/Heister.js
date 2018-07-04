@@ -72,10 +72,11 @@ class Heister extends Entity
         {
             if (this.level === 0)
             {
-                if(this.buyCrimeMultiplier)
-                    Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.crimeMultiplier;
-                if(this.buyMoneyMultiplier)
-                    Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.moneyMultiplier;
+                this.bonus.firstClick();
+                // if(this.buyCrimeMultiplier)
+                //     Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.crimeMultiplier;
+                // if(this.buyMoneyMultiplier)
+                //     Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.moneyMultiplier;
                 this.tick = 0;
                 this.active=true
             }
@@ -84,7 +85,8 @@ class Heister extends Entity
             //     this.clickAuto = window.setInterval(autoClickBase, 2000)
             // }
             
-            Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.moneyMultiplier;
+            // Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.moneyMultiplier;
+            this.bonus.onExecute();
 
             let statsmoney = Stats.Money - this.price
             Stats.Money = roundNumber(statsmoney);
