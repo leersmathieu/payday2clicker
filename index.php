@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Payday Clicker ALPHA v0.2</title>
+    <title>Payday Clicker ALPHA v0.3.0 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- bootstrap -->
@@ -122,7 +122,7 @@
         </div>
     </div>
     <footer>
-        Payday Clicker ALPHA v0.2.1
+        Payday Clicker ALPHA v0.3.0
     </footer>
 
         <script src="assets/js/Stats.js"></script>

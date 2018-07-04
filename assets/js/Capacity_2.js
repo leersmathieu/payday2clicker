@@ -34,7 +34,6 @@ class Capacity
     {
         this.currentTick = Date.now() - this.lastTick;
         this.lastTick = Date.now();
-        this.tickEnd += this.currentTick;
 
         this.tickEnd += this.currentTick;
         if(this.activeEnd && this.tickEnd >= this.duration)
@@ -51,8 +50,10 @@ class Capacity
             this.onReset();
         }
     }
+
     /**draw div */
     onDraw(){}
+
     /**click sur l'élément */
     onClick()
     {
@@ -62,7 +63,7 @@ class Capacity
             this.div.style.backgroundColor = 'red'
 
             /** ajout du bonus  */
-            onStart();
+            this.onStart();
             /** lance le timer de la fonction onEnd() */
             this.activeEnd = true;
             this.tickEnd = 0;
@@ -80,12 +81,15 @@ class Capacity
         this.div.style.visibility = 'visible';
     }
 
-    onStart(){}
-    onEnd(){}
     onReset()
     {
         this.available = true;
         this.div.style.opacity = 1;
         this.div.style.backgroundColor = 'rgb(255, 255, 51)';
+    }
+    onStart(){}
+    onEnd()
+    {
+        this.div.style.backgroundColor = 'gray';
     }
 }

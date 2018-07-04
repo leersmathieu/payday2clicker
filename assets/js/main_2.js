@@ -39,11 +39,12 @@ window.onload = () => {
      * @param {String} name - name of the heister
      * @param {Selector} div 
      * @param {Int} price - basic price
-     * @param {Int} priceUppgrade - added price (price = price + priceUppgrade)
+     * @param {Int} priceUpgrade - added price (price = price + priceUpgrade)
      * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s )
+     * @param {string} titleUpgrade - description / default = "Gain 50% more money"
      * @param {Int} moneyMultiplier - bonus money multiplier
-     * @param {Boolean} buyCrimeMultiplier  - true = bonus crime for purchase only 
-     * @param {Boolean} buyMoneyMultiplier  - true = bonus money for purchase only
+     * @param {Boolean} buyCrimeMultiplier  - true = bonus crime for purchase only / default = true
+     * @param {Boolean} buyMoneyMultiplier  - true = bonus money for purchase only / default = true
      */
 
     dallas = new Heister('Dallas', '#crewDallas', 150, 300)
@@ -51,8 +52,8 @@ window.onload = () => {
     hoxton = new Heister('Hoxton', '#crewHoxton', 3000, 500, 2500)
     wolf = new Heister('Wolf', '#crewWolf', 9000, 600, 2000)
 
-    houston = new Heister('Houston', '#crewHouston', 40000, 5000, 0, 3 )
-    wick = new Heister('John Wick', '#crewWick', 200000, 2000000, 0, 10)
+    houston = new Heister('Houston', '#crewHouston', 40000, 5000, 0,"Gain 300% more money", 3 )
+    wick = new Heister('John Wick', '#crewWick', 200000, 2000000, 0, "Money Multiplier upped by 50 %", 10)
 
     //ITEM
     transportBag = new Item('Transport Bag', '#itemTransportBag', 300, 10, 0.2)
@@ -103,6 +104,7 @@ let Tick = () => {
     SwanSong.onTick();
     Chameleon.onTick();
 
+    /**fonction Tick() de globalEvent */
     eventTick();
 
     queueNewFrame();
@@ -122,7 +124,7 @@ let queueNewFrame = () => {
         tick = window.oRequestAnimationFrame(Tick);
     else {
         queueNewFrame = function () {};
-        tick = window.setInterval(Tick, 16.7);
+        tick = window.setTimeout(Tick, 16.7);
     }
 };
 // queueNewFrame();

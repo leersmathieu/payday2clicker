@@ -6,8 +6,8 @@ class Heister extends Entity
      * @param {String} name - name of the heister
      * @param {Selector} div 
      * @param {Int} price - basic price
-     * @param {Int} priceUppgrade - added price (price = price + priceUppgrade)
      * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s )
+     * @param {Int} priceUpgrade - added price (price = price + priceUpgrade)
      * @param {Int} moneyMultiplier - bonus money multiplier
      * @param {Boolean} buyCrimeMultiplier  - true = bonus crime for purchase only 
      * @param {Boolean} buyMoneyMultiplier  - true = bonus money for purchase only
@@ -15,7 +15,7 @@ class Heister extends Entity
 
 
 
-    constructor(name, div, price, priceUppgrade, clickAuto = 0, moneyMultiplier = 0.5, buyCrimeMultiplier = true, buyMoneyMultiplier = true )
+    constructor(name, div, price, priceUpgrade, clickAuto = 0, titleUpgrade = "Gain 50% more money", moneyMultiplier = 0.5, buyCrimeMultiplier = true, buyMoneyMultiplier = true)
     {
         super(name, div, price)
 
@@ -23,7 +23,8 @@ class Heister extends Entity
         this.crimeMultiplier = 1;
     
         this.clickAutoInterval = clickAuto;
-        this.priceUppgrade = priceUppgrade;
+        this.priceUpgrade = priceUpgrade;
+        this.titleUpgrade = titleUpgrade;
         this.moneyMultiplier = moneyMultiplier;
         this.buyCrimeMultiplier = buyCrimeMultiplier;
         this.buyMoneyMultiplier = buyMoneyMultiplier; 
@@ -62,7 +63,7 @@ class Heister extends Entity
     onDraw()
     {
         this.div.innerText = `Upgrade ${this.name} : ${this.price} $ \n Level : ${this.level}`
-        this.div.title = 'Gain 50% more money'
+        this.div.title = this.titleUpgrade;
     }
     /**click sur l'élément */
     onClick()
@@ -89,7 +90,7 @@ class Heister extends Entity
             Stats.Money = roundNumber(statsmoney);
             // Stats.Money = Math.round(statsmoney * 100) / 100 //(debug)
 
-            this.price = this.price + this.priceUppgrade;
+            this.price = this.price + this.priceUpgrade;
             this.level++
 
             this.onDraw();
