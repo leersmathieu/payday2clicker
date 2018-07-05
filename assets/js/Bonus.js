@@ -10,21 +10,48 @@ class Bonus
 
 class AddToMultiplier extends Bonus 
 {
-    constructor(entity, addNumber, crimeNumber, onBuyNumber) {
+    /**
+     * 
+     * @param {*} entity 
+     * @param {*} bonusValue - value of this bonus
+     * @param {*} OnBuyCrimeBonus - when purchase crime bonus multiplier
+     * @param {*} OnBuyBonus - when purchase bonus
+     */
+    constructor(entity, bonusValue, OnBuyCrimeBonus, OnBuyBonus) {
         super(entity)
-        this.addNumber = addNumber
-        this.crimeNumber = crimeNumber
-        this.onBuyNumber = onBuyNumber;
+        this.bonusValue = bonusValue
+        this.OnBuyCrimeBonus = OnBuyCrimeBonus
+        this.OnBuyBonus = OnBuyBonus;
     }
     firstClick(){
-        if(this.buyCrimeMultiplier)
-            Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.crimeNumber;
-        if(this.buyMoneyMultiplier)
-            Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.onBuyNumber;
+        if(this.entity.buyCrimeMultiplier)
+            Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.OnBuyCrimeBonus;
+        if(this.entity.buyMoneyMultiplier)
+            Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.OnBuyBonus;
     }
     onExecute(){
-        Stats.MoneyMultiplier += this.addNumber
+        Stats.MoneyMultiplier += this.bonusValue
 
         
+    }
+}
+
+class MultiplyToMultiplier extends Bonus {
+    constructor(entity, bonusValue, OnBuyCrimeBonus, OnBuyBonus) {
+        super(entity)
+        this.bonusValue = bonusValue
+        this.OnBuyCrimeBonus = OnBuyCrimeBonus
+        this.OnBuyBonus = OnBuyBonus;
+    }
+    firstClick() {
+        if (this.entity.buyCrimeMultiplier)
+            Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.OnBuyCrimeBonus;
+        if (this.entity.buyMoneyMultiplier)
+            Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.OnBuyBonus;
+    }
+    onExecute() {
+        Stats.MoneyMultiplier *= this.bonusValue
+
+
     }
 }

@@ -42,19 +42,24 @@ window.onload = () => {
      * @param {Int} priceUpgrade - added price (price = price + priceUpgrade)
      * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s )
      * @param {string} titleUpgrade - description / default = "Gain 50% more money"
-     * @param {Int} moneyMultiplier - bonus money multiplier
+     * @/param {Int} moneyMultiplier - bonus money multiplier
      * @param {Boolean} buyCrimeMultiplier  - true = bonus crime for purchase only / default = true
      * @param {Boolean} buyMoneyMultiplier  - true = bonus money for purchase only / default = true
      */
 
     dallas = new Heister('Dallas', '#crewDallas', 150, 300)
-    dallas.Bonus = new AddToMultiplier(dallas, 5);
+    dallas.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
     chains = new Heister('Chains', '#crewChains', 900, 400, 3000) // => Best one
+    chains.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
     hoxton = new Heister('Hoxton', '#crewHoxton', 3000, 500, 2500)
+    hoxton.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
     wolf = new Heister('Wolf', '#crewWolf', 9000, 600, 2000)
-
-    houston = new Heister('Houston', '#crewHouston', 40000, 5000, 0,"Gain 300% more money", 3 )
-    wick = new Heister('John Wick', '#crewWick', 200000, 2000000, 0, "Money Multiplier upped by 50 %", 10)
+    wolf.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
+    
+    houston = new Heister('Houston', '#crewHouston', 40000, 5000, 0,"Gain 300% more money" )
+    houston.Bonus = new AddToMultiplier(dallas, 3, 1, 0)
+    wick = new Heister('John Wick', '#crewWick', 200000, 2000000, 0, "Money Multiplier upped by 50 %")
+    wick.Bonus = new MultiplyToMultiplier(wick, 1.5,1,0)
 
     //ITEM
 
@@ -64,11 +69,13 @@ window.onload = () => {
      * @param {selector} div 
      * @param {int} price - prix de l'item
      * @param {int} maxCount - number of item can we buy
-     * @param {int} multiplier - bonus of item
+     * @/param {int} multiplier - bonus of item
      */
-
-    transportBag = new Item('Transport Bag', '#itemTransportBag', 300, 10, 0.3)
+    
+    transportBag = new Item('Transport Bag', '#itemTransportBag', 300, 10)
+    transportBag.Bonus = new AddToMultiplier (transportBag, 0.3, 0, 0)
     ECM = new Item('E.C.M', '#itemECM', 2000, 1, 1)
+    ECM.Bonus = new AddToMultiplier(transportBag, 2, 0, 0)
 
 
 

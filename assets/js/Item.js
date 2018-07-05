@@ -6,15 +6,15 @@ class Item extends Entity
      * @param {selector} div 
      * @param {int} price - prix de l'item
      * @param {int} maxCount - number of item can we buy
-     * @param {int} multiplier - bonus of item
+     * @/param {int} multiplier - bonus of item
      */
-    constructor(name, div, price, maxCount, multiplier)
+    constructor(name, div, price, maxCount)
    { 
         super(name, div, price)
         this.counter = 0;
         this.state = false; // false = unlock; true = lock;
         this.maxCount = maxCount;
-        this.multiplier = multiplier;
+        // this.multiplier = multiplier;
     }
     
     // get Counter()

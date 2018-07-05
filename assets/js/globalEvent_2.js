@@ -47,7 +47,7 @@ const newLevel = ()  => {
     if (ECM.state && dallas.level >= 3) {
         backgroundLevel2()
         ECM.state = false
-    } else if (ECM.state == false && Stats.totalMoney >= 200000 && blockMap1 == 0){
+    } else if (ECM.state == false && Stats.totalMoney >= 300000 && blockMap1 == 0){
         backgroundLevel3()
         blockMap1++
         

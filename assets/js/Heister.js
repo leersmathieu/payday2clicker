@@ -8,14 +8,14 @@ class Heister extends Entity
      * @param {Int} price - basic price
      * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s )
      * @param {Int} priceUpgrade - added price (price = price + priceUpgrade)
-     * @param {Int} moneyMultiplier - bonus money multiplier
+     * @/param {Int} moneyMultiplier - bonus money multiplier
      * @param {Boolean} buyCrimeMultiplier  - true = bonus crime for purchase only 
      * @param {Boolean} buyMoneyMultiplier  - true = bonus money for purchase only
      */
 
 
 
-    constructor(name, div, price, priceUpgrade, clickAuto = 0, titleUpgrade = "Gain 50% more money", moneyMultiplier = 0.5, buyCrimeMultiplier = true, buyMoneyMultiplier = true)
+    constructor(name, div, price, priceUpgrade, clickAuto = 0, titleUpgrade = "Gain 50% more money", buyCrimeMultiplier = true, buyMoneyMultiplier = true)
     {
         super(name, div, price)
 
@@ -25,7 +25,7 @@ class Heister extends Entity
         this.clickAutoInterval = clickAuto;
         this.priceUpgrade = priceUpgrade;
         this.titleUpgrade = titleUpgrade;
-        this.moneyMultiplier = moneyMultiplier;
+        // this.moneyMultiplier = moneyMultiplier;
         this.buyCrimeMultiplier = buyCrimeMultiplier;
         this.buyMoneyMultiplier = buyMoneyMultiplier; 
 
