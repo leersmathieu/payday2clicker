@@ -1,3 +1,5 @@
+//Effects of capacity
+
 class MultiplierMoneyMultiplier extends Capacity
 {
     constructor(div, duration=0, reloading=0, moneyMultiplier=0){
@@ -10,15 +12,15 @@ class MultiplierMoneyMultiplier extends Capacity
     {
         super.onStart();
         let moneymultiplier = Stats.MoneyMultiplier;
-        this.total = roundNumber( (moneymultiplier * this.moneyMultiplier)-moneymultiplier );
-        Stats.MoneyMultiplier += this.total;
+        this.total = moneymultiplier * this.moneyMultiplier - moneymultiplier 
+        Stats.MoneyMultiplier = roundNumber(Stats.MoneyMultiplier + this.total);
     }
     onEnd()
     {
         super.onEnd();
-        Stats.MoneyMultiplier -= this.total;
-        // let moneymultiplier = (Stats.MoneyMultiplier / this.moneyMultiplier);
-        // Stats.MoneyMultiplier = Math.round(moneymultiplier * 100) / 100;
+        Stats.MoneyMultiplier = roundNumber(Stats.MoneyMultiplier - this.total);
+        
+        
     }
 }
 

@@ -8,6 +8,7 @@ class Bonus
     onExecute(){}
 }
 
+// Effect of bonus
 class AddToMultiplier extends Bonus 
 {
     /**
@@ -30,7 +31,8 @@ class AddToMultiplier extends Bonus
             Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.OnBuyBonus;
     }
     onExecute(){
-        Stats.MoneyMultiplier += this.bonusValue
+        let bonusvalue = Stats.MoneyMultiplier + this.bonusValue
+        Stats.MoneyMultiplier = roundNumber(bonusvalue)
 
         
     }
@@ -41,16 +43,17 @@ class MultiplyToMultiplier extends Bonus {
         super(entity)
         this.bonusValue = bonusValue
         this.OnBuyCrimeBonus = OnBuyCrimeBonus
-        this.OnBuyBonus = OnBuyBonus;
+        this.OnBuyBonus = OnBuyBonus
     }
     firstClick() {
         if (this.entity.buyCrimeMultiplier)
-            Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.OnBuyCrimeBonus;
+            Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.OnBuyCrimeBonus
         if (this.entity.buyMoneyMultiplier)
-            Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.OnBuyBonus;
+            Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.OnBuyBonus
     }
     onExecute() {
-        Stats.MoneyMultiplier *= this.bonusValue
+        let bonusvalue = Stats.MoneyMultiplier * this.bonusValue
+        Stats.MoneyMultiplier = roundNumber(bonusvalue)
 
 
     }
