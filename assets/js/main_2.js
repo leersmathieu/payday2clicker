@@ -125,6 +125,9 @@ window.onload = () => {
 let Tick = () => {
     /** placer le code pour le timer ici */
 
+    /**Tick des statistiques : calcul du temps écouler depuis le dernier tick */
+    Stats.onTick()
+
     dallas.onTick();
     chains.onTick();
     hoxton.onTick();

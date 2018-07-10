@@ -38,6 +38,7 @@ class Stat
     get MoneyMultiplier(){return this.moneyMultiplier;}
     set MoneyMultiplier(value){this.moneyMultiplier = value; this.div[4].innerText = 'Multiplicateur (money) : ' + this.MoneyMultiplier;}
 
+    get CurrentTick(){return this.currentTick;}
     /** Timer **/
     onTick()
     {

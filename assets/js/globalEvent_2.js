@@ -58,18 +58,18 @@ let globalEventTime = 400;
 let globalEventTick = 0;
 let newLevelTime = 400;
 let newLevelTick = 0;
-let lastTick = Date.now();
-let currentTick = Date.now();
+// let lastTick = Date.now();
+// let currentTick = Date.now();
 
 const eventTick = () => {
-    this.currentTick += Date.now() - this.lastTick;
-    this.lastTick = Date.now();
+    // this.currentTick += Date.now() - this.lastTick;
+    // this.lastTick = Date.now();
 
-    globalEventTick += currentTick;
+    globalEventTick += Stats.CurrentTick;
     if(globalEventTick >= globalEventTime)
         globalEvent();
     
-    newLevelTick += currentTick;
+    newLevelTick += Stats.CurrentTick;
     if(newLevelTick >= newLevelTime)
         newLevel();
 }

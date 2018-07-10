@@ -14,8 +14,8 @@ class Capacity
         this.available = true;
         
         /**temps écouler depuis le dernier tick */
-        this.lastTick = Date.now();         //dernier tick
-        this.currentTick = Date.now();      //milliSecond depuis le dernier click
+        // this.lastTick = Date.now();         //dernier tick
+        // this.currentTick = Date.now();      //milliSecond depuis le dernier click
         
         //End
         this.activeEnd = false;
@@ -32,17 +32,17 @@ class Capacity
     /**Timer */
     onTick()
     {
-        this.currentTick = Date.now() - this.lastTick;
-        this.lastTick = Date.now();
+        // this.currentTick = Date.now() - this.lastTick;
+        // this.lastTick = Date.now();
 
-        this.tickEnd += this.currentTick;
+        this.tickEnd += Stats.CurrentTick
         if(this.activeEnd && this.tickEnd >= this.duration)
         {
             this.tickEnd -= this.duration;
             this.activeEnd = false;
             this.onEnd();
         }
-        this.tickReset += this.currentTick;
+        this.tickReset += Stats.CurrentTick
         if(this.activeReset && this.tickReset >= this.reloading)
         {
             this.tickReset -= this.reloading;

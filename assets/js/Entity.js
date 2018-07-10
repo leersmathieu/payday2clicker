@@ -13,8 +13,8 @@ class Entity
         this.active = false;
 
         /**temps écouler depuis le dernier tick */
-        this.lastTick = Date.now();         //dernier tick
-        this.currentTick = Date.now();      //milliSecond depuis le dernier click
+        // this.lastTick = Date.now();         //dernier tick
+        // this.currentTick = Date.now();      //milliSecond depuis le dernier click
         this.tick = 0;                      //total de tick depuis le dernier reset. (cf : resetTick() )
     
         /**fonction bonus */
@@ -80,9 +80,10 @@ class Entity
     /**Timer */
     onTick()
     {
-        this.currentTick = Date.now() - this.lastTick;
-        this.lastTick = Date.now();
-        this.tick += this.currentTick;
+        // this.currentTick = Date.now() - this.lastTick;
+        // this.lastTick = Date.now();
+        // this.tick += this.currentTick;
+        this.tick += Stats.CurrentTick
     }
     /**draw div */
     onDraw(){}
