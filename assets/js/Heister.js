@@ -75,7 +75,7 @@ class Heister extends Entity
             this.onDraw();
 
         } else {
-            alert('Solde insuffisant')
+            alert('Missing Money')
         }
     }
 

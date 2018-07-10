@@ -5,7 +5,7 @@
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Payday Clicker ALPHA v0.4.1 </title>
+        <title>Payday Clicker ALPHA v0.4.2 </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- bootstrap -->
@@ -45,7 +45,7 @@
                             
                             <!-- Payday Crew (next) -->
                             <button type="button" id="crewHouston" onclick=houston.onClick() title="Gain 300% more money"></button>
-                            <button type="button" id="crewWick" onclick=wick.onClick() title="Money Multiplier upped by 50%"></button>
+                            <button type="button" id="crewWick" onclick=wick.onClick() title="Money Multiplier upped by 25%"></button>
                             <button type="button" id="crewClover" onclick=clover.onClick() title="New AutoClicker"></button>
 
                         </div>
@@ -141,7 +141,7 @@
         </div>
 
         <footer>
-            Payday Clicker ALPHA v0.4.1
+            Payday Clicker ALPHA v0.4.2
         </footer>
 
         <script src="assets/js/Stats.js"></script>

@@ -88,7 +88,7 @@ window.onload = () => {
     transportBag.Bonus = new AddToMultiplier (transportBag, 0.3)
     ECM = new Item('E.C.M', '#itemECM', 2000, 1, 1)
     ECM.Bonus = new AddToMultiplier(transportBag, 2)
-    drill = new Item('Basic Drill' ,'#itemDrill', 10000 ,3)
+    drill = new Item(' Heister Drill' ,'#itemDrill', 10000 ,3)
     drill.Bonus = new AddToMultiplier(drill, 5)
 
 
