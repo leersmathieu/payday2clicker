@@ -28,7 +28,13 @@ class Item extends Entity
     /**draw div */
     onDraw()
     {
-        this.div.innerText = `Plus de ${this.name} : ${this.price}$`
+        this.div.innerText = `Uppgrade ${this.name} : ${this.price}$`
+
+        let transportBagDiv = document.querySelector('#itemTransportBag')
+
+        if (this.div == transportBagDiv) {
+            this.div.innerText = `More ${this.name} : ${this.price}$`
+        }
     }
 
     /**click sur l'élément */
@@ -47,9 +53,18 @@ class Item extends Entity
                 let statsmoney = Stats.Money - this.price;
                 Stats.Money = roundNumber(statsmoney);
 
-                this.onDraw();
+                //EXCEPTION
+                
+                let drillDiv = document.querySelector('#itemDrill')
+                
+                if (this.div == drillDiv){
+                    this.price *= 3
+                }
+
+                //////////////////
 
                 this.counter++
+                this.onDraw();
 
             } else {
                 alert('Not enough money');

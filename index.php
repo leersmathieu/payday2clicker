@@ -46,6 +46,7 @@
                             <!-- Payday Crew (next) -->
                             <button type="button" id="crewHouston" onclick=houston.onClick() title="Gain 300% more money"></button>
                             <button type="button" id="crewWick" onclick=wick.onClick() title="Money Multiplier upped by 50%"></button>
+                            <button type="button" id="crewClover" onclick=clover.onClick() title="New AutoClicker"></button>
 
                         </div>
 
@@ -55,6 +56,7 @@
 
                             <button type="button" id="itemTransportBag" onclick=transportBag.onClick()>Transport Bag</button>
                             <button type="button" id="itemECM" onclick=ECM.onClick()>E.C.M</button>
+                            <button type="button" id="itemDrill" onclick=drill.onClick()>Basic Drill</button>
 
                         </div>
                     </div>

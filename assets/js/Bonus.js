@@ -58,3 +58,25 @@ class MultiplyToMultiplier extends Bonus {
 
     }
 }
+
+class CloverBonus extends Bonus {
+    constructor(entity, bonusValue, OnBuyCrimeBonus, OnBuyBonus) {
+        super(entity)
+        this.bonusValue = bonusValue
+        this.OnBuyCrimeBonus = OnBuyCrimeBonus
+        this.OnBuyBonus = OnBuyBonus
+    }
+    firstClick() {
+        if (this.entity.buyCrimeBonus)
+            Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.OnBuyCrimeBonus
+        if (this.entity.buyMoneyMultiplier)
+            Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.OnBuyBonus
+    }
+    onExecute() {
+        clover.clickAutoInterval -= 200 
+        
+        // Stats.MoneyMultiplier = roundNumber(bonusvalue)
+
+
+    }
+}

@@ -16,6 +16,7 @@ let houston = null
 
 let transportBag = null
 let ECM = null
+let drill = null
 
 let SwanSong = null
 let Chameleon = null
@@ -52,16 +53,18 @@ window.onload = () => {
     dallas = new Heister('Dallas', '#crewDallas', 150, 300)
     dallas.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
     chains = new Heister('Chains', '#crewChains', 900, 400, 3000) 
-    chains.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
-    hoxton = new Heister('Hoxton', '#crewHoxton', 3000, 500, 2500)
-    hoxton.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
-    wolf = new Heister('Wolf', '#crewWolf', 9000, 600, 2000)
-    wolf.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
+    chains.Bonus = new AddToMultiplier(chains, 0.5, 1, 0.5)
+    hoxton = new Heister('Hoxton', '#crewHoxton', 6000, 500, 2500)
+    hoxton.Bonus = new AddToMultiplier(hoxton, 0.5, 1, 0.5)
+    wolf = new Heister('Wolf', '#crewWolf', 17500, 600, 2000)
+    wolf.Bonus = new AddToMultiplier(wolf, 0.5, 1, 0.5)
     
-    houston = new Heister('Houston', '#crewHouston', 40000, 5000, 0,"Gain 300% more money" )
-    houston.Bonus = new AddToMultiplier(dallas, 3, 1, 0)
-    wick = new Heister('John Wick', '#crewWick', 200000, 2000000, 0, "Money Multiplier upped by 50 %")
-    wick.Bonus = new MultiplyToMultiplier(wick, 1.5,1,0)
+    houston = new Heister('Houston', '#crewHouston', 50000, 5500, 0,"Gain 300% more money" )
+    houston.Bonus = new AddToMultiplier(houston, 3, 1, 0)
+    wick = new Heister('John Wick', '#crewWick', 200000, 200000, 0, "Money Multiplier upped by 25 %")
+    wick.Bonus = new MultiplyToMultiplier(wick, 1.25,1,0)
+    clover = new Heister ('Clover', '#crewClover', 999999,777777,4000, "Upgrade autoclicker speed")
+    clover.Bonus = new CloverBonus (clover, 1,1,0)
 
 
 
@@ -83,6 +86,8 @@ window.onload = () => {
     transportBag.Bonus = new AddToMultiplier (transportBag, 0.3)
     ECM = new Item('E.C.M', '#itemECM', 2000, 1, 1)
     ECM.Bonus = new AddToMultiplier(transportBag, 2)
+    drill = new Item('Basic Drill' ,'#itemDrill', 10000 ,3)
+    drill.Bonus = new AddToMultiplier(drill, 5)
 
 
 
@@ -107,9 +112,11 @@ window.onload = () => {
 
     houston.div.innerText += 'Recruit ' + houston.name + ' : ' + houston.price + ' $ \n Level : ' + houston.level
     wick.div.innerText += 'Recruit ' + wick.name + ' : ' + wick.price + ' $ \n Level : ' + wick.level
+    clover.div.innerText += 'Recruit ' + clover.name + ' : ' + clover.price + ' $ \n Level : ' + clover.level
 
     transportBag.div.innerText += ' : ' + transportBag.price + ' $'
     ECM.div.innerText += ' : ' + ECM.price + ' $'
+    drill.div.innerText += ' : ' + drill.price + ' $'
 
     Stats.onDraw();
 
@@ -131,9 +138,11 @@ let Tick = () => {
     wolf.onTick();
     houston.onTick();
     wick.onTick();
+    clover.onTick();
 
     transportBag.onTick();
     ECM.onTick();
+    drill.onTick();
 
     SwanSong.onTick();
     Chameleon.onTick();

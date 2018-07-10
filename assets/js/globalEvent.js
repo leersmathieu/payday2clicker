@@ -13,12 +13,19 @@ const backgroundLevel3 = () => {
     alert('New level Unlock !')
 }
 
+const backgroundLevel4 = () => {
+    displayImgBack.style.backgroundImage = "url('assets/img/fwb.png')"
+    alert('New level Unlock !')
+
+}
+
 ////////////////////////////////EVENT/////////////////////////////
 
 let blockerEv1 = 0 // Bloqueur d'évènement
 let blockerEv2 = 0
 let blockerEv3 = 0
 let blockerEv4 = 0
+let blockerEv5 = 0
 
 
 
@@ -38,19 +45,32 @@ const globalEvent = () => {
         wick.onUnLock()
         blockerEv3++
     }
+    if (clover.level == 20 && blockerEv5 == 0) {
+        alert('Clover prepares his dominance ')
+        blockerEv5++
+
+    } if (clover.level == 21 && blockerEv5 == 1){
+        alert('The world is your... GG you finish my 0.4 version of this game !')
+        blockerEv5++
+    }
    
 }
 
 let blockMap1 = 0
+let blockMap2 = 0
 
 const newLevel = ()  => {
-    if (ECM.state && dallas.level >= 3) {
+    if (ECM.state && dallas.level >= 5) {
         backgroundLevel2()
         ECM.state = false
     } else if (ECM.state == false && Stats.totalMoney >= 300000 && blockMap1 == 0){
         backgroundLevel3()
         blockMap1++
-        
+    }
+    else if (drill.counter == 3 && Stats.totalMoney >= 1000000 && blockMap2 == 0) {
+        backgroundLevel4()
+        blockMap2++
+
     }
 } 
 
@@ -90,8 +110,11 @@ let cursorClick = () => {
 
     let money = Stats.MoneyAdditioner * Stats.MoneyMultiplier
     money = roundNumber(money)
-    Stats.TotalMoney += money; 
+
+    Stats.TotalMoney += money;
+    Stats.TotalMoney = roundNumber(Stats.TotalMoney) 
     Stats.Money += money 
+    Stats.Money = roundNumber(Stats.Money)
 
     let displayMoneyWin = () => {
         let axeXy = document.querySelector('.axe-x-y')
