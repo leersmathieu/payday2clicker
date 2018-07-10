@@ -40,10 +40,8 @@ class Heister extends Entity
         super.onTick();
         if(this.active && this.clickAutoInterval !== 0 && this.tick >= this.clickAutoInterval)
         {
-            let nbrTick = Math.floor(this.tick / this.clickAutoInterval);
-            console.log( "this.tick : " + this.tick + " nbrTick : " + nbrTick)
-            this.tick -= this.clickAutoInterval * nbrTick;
-            this.onAutoClick( nbrTick);
+            this.tick -= this.clickAutoInterval;
+            this.onAutoClick();
         }
     }
 
@@ -81,16 +79,16 @@ class Heister extends Entity
         }
     }
 
-    onAutoClick(nbrtick)
+    onAutoClick()
     {
-        Stats.MoneyAdditioner = (Math.floor(Math.random() * 10) + 1) * nbrtick;
+        Stats.MoneyAdditioner = Math.floor(Math.random() * 10) + 1
 
-        Stats.Crime = (Stats.Crime + (Stats.CrimeAdditioner * Stats.CrimeMultiplier)) * nbrtick
+        Stats.Crime = Stats.Crime + (Stats.CrimeAdditioner * Stats.CrimeMultiplier)
 
-        let totalmoney = (Stats.TotalMoney + (Stats.MoneyAdditioner * Stats.MoneyMultiplier)) * nbrtick
+        let totalmoney = Stats.TotalMoney + (Stats.MoneyAdditioner * Stats.MoneyMultiplier)
         Stats.TotalMoney = roundNumber(totalmoney) // correction bug js
 
-        let money = (Stats.Money + (Stats.MoneyAdditioner * Stats.MoneyMultiplier)) * nbrtick;
+        let money = Stats.Money + (Stats.MoneyAdditioner * Stats.MoneyMultiplier)
         Stats.Money = roundNumber(money) 
     }
 }

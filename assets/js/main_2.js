@@ -114,7 +114,9 @@ window.onload = () => {
     Stats.onDraw();
 
    
-    queueNewFrame();
+    // queueNewFrame();
+    tick = window.setInterval(Tick, 16.7)// -1;
+
 
 }
 
@@ -139,26 +141,26 @@ let Tick = () => {
     /**fonction Tick() de globalEvent */
     eventTick();
 
-    queueNewFrame();
+    // queueNewFrame();
 };
 let tick = -1;
-let queueNewFrame = () => {
+// let queueNewFrame = () => {
 
-    if (window.requestAnimationFrame)
-        tick = window.requestAnimationFrame(Tick);
-    else if (window.msRequestAnimationFrame)
-        tick = window.msRequestAnimationFrame(Tick);
-    else if (window.webkitRequestAnimationFrame)
-        tick = window.webkitRequestAnimationFrame(Tick);
-    else if (window.mozRequestAnimationFrame)
-        tick = window.mozRequestAnimationFrame(Tick);
-    else if (window.oRequestAnimationFrame)
-        tick = window.oRequestAnimationFrame(Tick);
-    else {
-        queueNewFrame = function () {};
-        tick = window.setTimeout(Tick, 16.7);
-    }
-};
+//     if (window.requestAnimationFrame)
+//         tick = window.requestAnimationFrame(Tick);
+//     else if (window.msRequestAnimationFrame)
+//         tick = window.msRequestAnimationFrame(Tick);
+//     else if (window.webkitRequestAnimationFrame)
+//         tick = window.webkitRequestAnimationFrame(Tick);
+//     else if (window.mozRequestAnimationFrame)
+//         tick = window.mozRequestAnimationFrame(Tick);
+//     else if (window.oRequestAnimationFrame)
+//         tick = window.oRequestAnimationFrame(Tick);
+//     else {
+//         queueNewFrame = function () {};
+//         tick = window.setTimeout(Tick, 16.7);
+//     }
+// };
 // queueNewFrame();
 
 /**Arrondir 2 chiffres après la virgule */
