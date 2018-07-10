@@ -25,7 +25,7 @@ class AddToMultiplier extends Bonus
         this.OnBuyBonus = OnBuyBonus;
     }
     firstClick(){
-        if(this.entity.buyCrimeMultiplier)
+        if(this.entity.buyCrimeBonus)
             Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.OnBuyCrimeBonus;
         if(this.entity.buyMoneyMultiplier)
             Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.OnBuyBonus;
@@ -46,7 +46,7 @@ class MultiplyToMultiplier extends Bonus {
         this.OnBuyBonus = OnBuyBonus
     }
     firstClick() {
-        if (this.entity.buyCrimeMultiplier)
+        if (this.entity.buyCrimeBonus)
             Stats.CrimeMultiplier = Stats.CrimeMultiplier + this.OnBuyCrimeBonus
         if (this.entity.buyMoneyMultiplier)
             Stats.MoneyMultiplier = Stats.MoneyMultiplier + this.OnBuyBonus

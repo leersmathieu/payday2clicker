@@ -88,18 +88,12 @@ let cursorClick = () => {
 
     let moneyWin = (Stats.MoneyAdditioner * Stats.MoneyMultiplier)
 
-    moneyWin = Math.round(moneyWin * 100 ) / 100
+    moneyWin = roundNumber(moneyWin)
 
     let money = Stats.MoneyAdditioner * Stats.MoneyMultiplier
-    money = Math.round(money * 100) / 100
+    money = roundNumber(money)
     Stats.TotalMoney += money; 
     Stats.Money += money 
-
-    // statsValue[0].innerText = 'Crimes Commis : ' + Stats.Crime
-    // statsValue[1].innerText = 'Argent Récolté : ' + Stats.TotalMoney + ' $'
-    // statsValue[2].innerText = 'Compte en banque : ' + money + ' $'
-    // statsValue[3].innerText = 'Multiplicateur (crime) : ' + Stats.CrimeMultiplier
-    // statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
 
     let displayMoneyWin = () => {
         let axeXy = document.querySelector('.axe-x-y')

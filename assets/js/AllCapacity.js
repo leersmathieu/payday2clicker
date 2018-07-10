@@ -2,9 +2,16 @@
 
 class MultiplierMoneyMultiplier extends Capacity
 {
-    constructor(div, duration=0, reloading=0, moneyMultiplier=0){
+    /**
+     * 
+     * @param {selector} div 
+     * @param {int} duration 
+     * @param {int} reloading 
+     * @param {int} bonusValue - value of THIS bonus
+     */
+    constructor(div, duration=0, reloading=0, bonusValue=0){
         super(div, duration, reloading);
-        this.moneyMultiplier = moneyMultiplier;
+        this.bonusValue = bonusValue;
         this.total = 0;
     }
 
@@ -12,7 +19,7 @@ class MultiplierMoneyMultiplier extends Capacity
     {
         super.onStart();
         let moneymultiplier = Stats.MoneyMultiplier;
-        this.total = moneymultiplier * this.moneyMultiplier - moneymultiplier 
+        this.total = moneymultiplier * this.bonusValue - moneymultiplier 
         Stats.MoneyMultiplier = roundNumber(Stats.MoneyMultiplier + this.total);
     }
     onEnd()

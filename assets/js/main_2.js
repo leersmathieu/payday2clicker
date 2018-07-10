@@ -5,16 +5,10 @@ console.log("============================================")
 ////////////////////////////////////////////////////////////
 //Object && Variable//
 
-let clicker = document.querySelector('#clicker')
-let display = document.querySelector('#display')
-let displayImgBack = document.querySelector('#displayImgBack')
-// let displayAnim = document.querySelector('#displayAnim')
-// let stats = document.querySelector('#stats')
-// let statsValue = document.querySelectorAll('.statsValue')
-
+/* init var */
 let dallas = null
 let hoxton = null
-let chains = null // => Best one
+let chains = null
 let wolf = null
 
 let wick = null
@@ -25,16 +19,15 @@ let ECM = null
 
 let SwanSong = null
 let Chameleon = null
-//Stats
 
+//Stats
 let Stats = new Stat();
+/////////////////////////
+
 window.onload = () => {
 
-    
 
-    //HEISTER
-
-    /**
+    /**HEISTER PARAM
      * 
      * @param {String} name - name of the heister
      * @param {Selector} div 
@@ -42,14 +35,23 @@ window.onload = () => {
      * @param {Int} priceUpgrade - added price (price = price + priceUpgrade)
      * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s )
      * @param {string} titleUpgrade - description / default = "Gain 50% more money"
-     * @/param {Int} moneyMultiplier - bonus money multiplier
-     * @param {Boolean} buyCrimeMultiplier  - true = bonus crime for purchase only / default = true
-     * @param {Boolean} buyMoneyMultiplier  - true = bonus money for purchase only / default = true
-     */
+     * 
+     * @param {Boolean} buyCrimeBonus  - if true : SET one BONUS crime (OnBuyCrimeBonus) / default = true
+     * @param {Boolean} buyMoneyMultiplier  - if true : SET one BONUS (OnBuyBonus) / default = true
+     *
+     **BONUS PARAM
+     * 
+     * @param {*} entity 
+     * @param {*} bonusValue - value of this bonus
+     * 
+     * @param {*} OnBuyCrimeBonus - when purchase crime bonus multiplier
+     * @param {*} OnBuyBonus - when purchase bonus
+     * 
+     **/
 
     dallas = new Heister('Dallas', '#crewDallas', 150, 300)
     dallas.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
-    chains = new Heister('Chains', '#crewChains', 900, 400, 3000) // => Best one
+    chains = new Heister('Chains', '#crewChains', 900, 400, 3000) 
     chains.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
     hoxton = new Heister('Hoxton', '#crewHoxton', 3000, 500, 2500)
     hoxton.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
@@ -61,25 +63,37 @@ window.onload = () => {
     wick = new Heister('John Wick', '#crewWick', 200000, 2000000, 0, "Money Multiplier upped by 50 %")
     wick.Bonus = new MultiplyToMultiplier(wick, 1.5,1,0)
 
-    //ITEM
 
-    /**
+
+    /**ITEM PARAM
      * 
      * @param {string} name 
      * @param {selector} div 
      * @param {int} price - prix de l'item
      * @param {int} maxCount - number of item can we buy
-     * @/param {int} multiplier - bonus of item
-     */
+     *
+     ***BONUS PARAM
+     * 
+     * @param {*} entity 
+     * @param {*} bonusValue - value of this bonus
+     * 
+     **/
     
     transportBag = new Item('Transport Bag', '#itemTransportBag', 300, 10)
-    transportBag.Bonus = new AddToMultiplier (transportBag, 0.3, 0, 0)
+    transportBag.Bonus = new AddToMultiplier (transportBag, 0.3)
     ECM = new Item('E.C.M', '#itemECM', 2000, 1, 1)
-    ECM.Bonus = new AddToMultiplier(transportBag, 2, 0, 0)
+    ECM.Bonus = new AddToMultiplier(transportBag, 2)
 
 
 
-    //CAPACITY
+    /**CAPACITY PARAM
+     * 
+     * @param {selector} div 
+     * @param {int} duration - in ms
+     * @param {int} reloading - in ms
+     * @param {int} bonusValue - value of THIS bonus
+     */
+
     SwanSong = new MultiplierMoneyMultiplier('#capSwanSong', 6000, 60000, 2);
     Chameleon = new MultiplierMoneyMultiplier('#capChameleon', 30000, 180000, 1.3);
 
