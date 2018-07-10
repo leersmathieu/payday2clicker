@@ -12,7 +12,7 @@ play it for free here : [GAME](leersmathieu.com/payday2clicker)
 
 ## PATCHNOTE
 
-**ALPHA : V0.1.0 => V0.4.1**
+**ALPHA : V0.1.0 => V0.4.2**
 
 - Complete code restructuration (Procedural => oop)
 - Design fully revisited
