@@ -12,12 +12,8 @@ class Capacity
     {
         this.div = document.querySelector(div);
         this.available = true;
-        
-        /**temps écouler depuis le dernier tick */
-        // this.lastTick = Date.now();         //dernier tick
-        // this.currentTick = Date.now();      //milliSecond depuis le dernier click
-        
-        //End
+     
+        /**End*/
         this.activeEnd = false;
         this.tickEnd = 0;
         this.duration = duration;
@@ -32,8 +28,7 @@ class Capacity
     /**Timer */
     onTick()
     {
-        // this.currentTick = Date.now() - this.lastTick;
-        // this.lastTick = Date.now();
+
 
         this.tickEnd += Stats.CurrentTick
         if(this.activeEnd && this.tickEnd >= this.duration)

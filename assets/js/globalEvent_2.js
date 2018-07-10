@@ -58,18 +58,17 @@ let globalEventTime = 400;
 let globalEventTick = 0;
 let newLevelTime = 400;
 let newLevelTick = 0;
-// let lastTick = Date.now();
-// let currentTick = Date.now();
+
 
 const eventTick = () => {
-    // this.currentTick += Date.now() - this.lastTick;
-    // this.lastTick = Date.now();
 
     globalEventTick += Stats.CurrentTick;
+
     if(globalEventTick >= globalEventTime)
         globalEvent();
     
     newLevelTick += Stats.CurrentTick;
+
     if(newLevelTick >= newLevelTime)
         newLevel();
 }
@@ -80,11 +79,10 @@ const eventTick = () => {
 
 let cursorClick = () => {
     Stats.MoneyAdditioner = Math.floor(Math.random() * 10) + 1
-    // console.log(moneyAdditioner)
 
     Stats.Crime = Stats.Crime + (Stats.CrimeAdditioner * Stats.CrimeMultiplier)
     let totalmoney = Stats.TotalMoney + (Stats.MoneyAdditioner * Stats.MoneyMultiplier)
-    totalMoney = Math.round(totalmoney * 100) / 100 // correction bug js
+    totalMoney = roundNumber(totalmoney) // correction bug js
 
     let moneyWin = (Stats.MoneyAdditioner * Stats.MoneyMultiplier)
 
