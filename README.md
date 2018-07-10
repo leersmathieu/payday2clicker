@@ -1,7 +1,14 @@
 # payday2clicker
 Standalone repo for my clicker game
 
-play it here : [GAME](leersmathieu.com/payday2clicker)
+# Contributor
+
+Morgant Mignot : Master of OOP
+Poney : Following development
+
+A big thank's to all testers / feedbackers
+
+play it here for free : [GAME](leersmathieu.com/payday2clicker)
 
 ## PATCHNOTE
 
@@ -37,3 +44,4 @@ play it here : [GAME](leersmathieu.com/payday2clicker)
 - Sound
 - New Animation
 - Infamy (prestige) system
+
