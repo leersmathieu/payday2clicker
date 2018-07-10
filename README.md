@@ -3,7 +3,7 @@ Standalone repo for my clicker game
 
 # Contributor
 
-Morgant Mignot : Master of OOP  
+Morgan Mignot : Master of OOP  
 Poney : Following development
 
 *A big thank's to all testers / feedbackers*
