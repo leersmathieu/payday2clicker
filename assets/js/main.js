@@ -13,6 +13,7 @@ let wolf = null
 
 let wick = null
 let houston = null
+let clover = null
 
 let transportBag = null
 let ECM = null
@@ -20,6 +21,7 @@ let drill = null
 
 let SwanSong = null
 let Chameleon = null
+let Partner = null
 
 //Stats
 let Stats = new Stat();
@@ -101,6 +103,7 @@ window.onload = () => {
 
     SwanSong = new MultiplierMoneyMultiplier('#capSwanSong', 6000, 60000, 2);
     Chameleon = new MultiplierMoneyMultiplier('#capChameleon', 30000, 180000, 1.3);
+    Partner = new MultiplierMoneyMultiplier ('#capPartner',1800000,1801000,1.1);
 
     ////////////////////////////////////////////////////////////
     //injection préliminaire//
@@ -146,6 +149,7 @@ let Tick = () => {
 
     SwanSong.onTick();
     Chameleon.onTick();
+    Partner.onTick();
 
     /**fonction Tick() de globalEvent */
     eventTick();

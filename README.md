@@ -5,7 +5,7 @@ play it here : [GAME](leersmathieu.com/payday2clicker)
 
 ## PATCHNOTE
 
-**ALPHA : V0.1.0 => V0.4.0**
+**ALPHA : V0.1.0 => V0.4.1**
 
 - Complete code restructuration (Procedural => oop)
 - Design fully revisited
@@ -18,6 +18,7 @@ play it here : [GAME](leersmathieu.com/payday2clicker)
     - New Stuff : DRILL ( 10k$ => +5 to moneyMultiplier, upgradable )
     - New Level : first world bank
     - New Heister : clover (New autoclicker with upgradable CLICK SPEED !)
+    - New Capacity : Partner in crime (up the money earned by 10% when he stay active (Its your converted cops!))
     - New End Game...
 - Debug : 
     - the bonus are correctly removed after using a capacity
@@ -25,6 +26,7 @@ play it here : [GAME](leersmathieu.com/payday2clicker)
     - a lot of little things
 
 **ISSUE KNOW**
+- Nothing atm?
 
 ## NEXT FEATURE
 

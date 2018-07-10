@@ -43,7 +43,11 @@ const globalEvent = () => {
     
     if (houston.level >= 1 && blockerEv3 == 0){
         wick.onUnLock()
+        Partner.onUnLock()
         blockerEv3++
+    }
+    if (wick.level >= 1 && blockerEv3 == 1){
+        clover.onUnLock()
     }
     if (clover.level == 20 && blockerEv5 == 0) {
         alert('Clover prepares his dominance ')

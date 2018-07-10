@@ -5,7 +5,7 @@
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Payday Clicker ALPHA v0.4.0 </title>
+        <title>Payday Clicker ALPHA v0.4.1 </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- bootstrap -->
@@ -115,6 +115,7 @@
 
                             <button type="button" id="capSwanSong" onclick=SwanSong.onClick() title="Money * 2 for 6s CD: 60s">Swan Song</button>
                             <button type="button" id="capChameleon" onclick=Chameleon.onClick() title="Money * 1.3 for 30s CD: 180s">Chameleon</button>
+                            <button type="button" id="capPartner" onclick=Partner.onClick() title="MoneyMultiplier upped by 10% for 1800s CD: 1800s">Partner in crime</button>
 
                         </div>
                     </div>
@@ -140,7 +141,7 @@
         </div>
 
         <footer>
-            Payday Clicker ALPHA v0.4.0
+            Payday Clicker ALPHA v0.4.1
         </footer>
 
         <script src="assets/js/Stats.js"></script>
