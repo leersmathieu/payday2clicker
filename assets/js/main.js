@@ -3,162 +3,161 @@ console.log("=      Play fair, don't cheat mate         =")
 console.log("============================================")
 
 ////////////////////////////////////////////////////////////
-                    //Object && Variable//
+//Object && Variable//
 
-let clicker = document.querySelector('#clicker')
-let display = document.querySelector('#display')
-let displayImgBack = document.querySelector('#displayImgBack')
-let displayAnim = document.querySelector('#displayAnim')
-let stats = document.querySelector('#stats')
-let statsValue = document.querySelectorAll('.statsValue')
+/* init var */
+let dallas = null
+let hoxton = null
+let chains = null
+let wolf = null
 
-//CREW
+let wick = null
+let houston = null
+let clover = null
 
-class Heister {
-    constructor(name, div, prix) {
-        this.name = name
-        this.div = document.querySelector(div)
-        this.prix = prix
-        this.level = 0
-        this.clickAuto = undefined
-    }
-}
+let transportBag = null
+let ECM = null
+let drill = null
 
-let dallas = new Heister ('Dallas', '#crewDallas', 150)
-let chains = new Heister ('Chains', '#crewChains', 900)
-let hoxton = new Heister ('Hoxton', '#crewHoxton', 3000)
-let wolf = new Heister('Wolf', '#crewWolf', 9000)
+let SwanSong = null
+let Chameleon = null
+let Partner = null
 
-let houston = new Heister ('Houston', '#crewHouston', 40000)
-let wick = new Heister ('John Wick', '#crewWick', 200000)
+//Stats
+let Stats = new Stat();
+/////////////////////////
+
+window.onload = () => {
 
 
+    /**HEISTER PARAM
+     * 
+     * @param {String} name - name of the heister
+     * @param {Selector} div 
+     * @param {Int} price - basic price
+     * @param {Int} priceUpgrade - added price (price = price + priceUpgrade)
+     * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s )
+     * @param {string} titleUpgrade - description / default = "Gain 50% more money"
+     * 
+     * @param {Boolean} buyCrimeBonus  - if true : SET one BONUS crime (OnBuyCrimeBonus) / default = true
+     * @param {Boolean} buyMoneyMultiplier  - if true : SET one BONUS (OnBuyBonus) / default = true
+     *
+     **BONUS PARAM
+     * 
+     * @param {*} entity 
+     * @param {*} bonusValue - value of this bonus
+     * 
+     * @param {*} OnBuyCrimeBonus - when purchase crime bonus multiplier
+     * @param {*} OnBuyBonus - when purchase bonus
+     * 
+     **/
 
-//ITEM
-class Item {
-    constructor (name, div, prix) {
-        this.name = name
-        this.div = document.querySelector(div)
-        this.prix = prix
-        this.counter = 0
-        this.etat = 'lock'
-    }
-}
-
-let transportBag = new Item ('Transport Bag', '#itemTransportBag', 300)
-let ECM = new Item ('E.C.M', '#itemECM', 2000)
-
-
-
-//CAPACITY
-
-let capSwanSong = document.querySelector('#capSwanSong')
-let timerSwanSong = 'available'
-
-let capChameleon = document.querySelector('#capChameleon')
-let timerChameleon = 'available'
-
-
-//SCORE CRIME
-let crime = 0 // nombre de crime commis
-let crimeAdditioner = 1
-let crimeMultiplier = 1
-
-//SCORE MONEY
-let money = 0 //argent disponible
-let totalMoney = 0 //argent total récolté ( compte offshore)
-let moneyAdditioner = 0 //est définis au click
-let moneyMultiplier = 1
-
-
-////////////////////////////////////////////////////////////
-                //injection préliminaire//
-
-dallas.div.innerText += ' : ' + dallas.prix + ' $ \n Level : ' + dallas.level
-chains.div.innerText += ' : ' + chains.prix + ' $ \n Level : ' + chains.level
-hoxton.div.innerText += ' : ' + hoxton.prix + ' $ \n Level : ' + hoxton.level
-wolf.div.innerText += ' : ' + wolf.prix + ' $ \n Level : ' + wolf.level
-
-houston.div.innerText += 'Recruit ' + houston.name + ' : ' + houston.prix + ' $ \n Level : ' + houston.level
-wick.div.innerText += 'Recruit ' + wick.name + ' : ' + wick.prix + ' $ \n Level : ' + wick.level
-
-transportBag.div.innerText += ' : ' + transportBag.prix + ' $'
-ECM.div.innerText += ' : ' + ECM.prix + ' $'
-
-statsValue[0].innerText = 'Crimes Commis : aucun'
-statsValue[1].innerText = 'Argent Récolté : 0 $'
-statsValue[2].innerText = 'Compte en banque : 0 $'
-statsValue[3].innerText = 'Multiplicateur (crime) : 1'
-statsValue[4].innerText = 'Multiplicateur (money) : 1'
-
-////////////////////////////////////////////////////////////
-                    //Fonction Clicker//
+    dallas = new Heister('Dallas', '#crewDallas', 150, 300)
+    dallas.Bonus = new AddToMultiplier(dallas, 0.5, 1, 0.5)
+    chains = new Heister('Chains', '#crewChains', 900, 400, 3000) 
+    chains.Bonus = new AddToMultiplier(chains, 0.5, 1, 0.5)
+    hoxton = new Heister('Hoxton', '#crewHoxton', 6000, 500, 2500)
+    hoxton.Bonus = new AddToMultiplier(hoxton, 0.5, 1, 0.5)
+    wolf = new Heister('Wolf', '#crewWolf', 17500, 600, 2000)
+    wolf.Bonus = new AddToMultiplier(wolf, 0.5, 1, 0.5)
+    
+    houston = new Heister('Houston', '#crewHouston', 50000, 5500, 0,"Gain 300% more money" )
+    houston.Bonus = new AddToMultiplier(houston, 3, 1, 0)
+    wick = new Heister('John Wick', '#crewWick', 200000, 200000, 0, "Money Multiplier upped by 25 %")
+    wick.Bonus = new MultiplyToMultiplier(wick, 1.25,1,0)
+    clover = new Heister ('Clover', '#crewClover', 999999,777777,4000, "Upgrade autoclicker speed")
+    clover.Bonus = new CloverBonus (clover, 1,1,0)
 
 
 
-let cursorClick = () => {
-
-    moneyAdditioner = Math.floor(Math.random() * 10) + 1
-    // console.log(moneyAdditioner)
-
-    crime = crime + (crimeAdditioner * crimeMultiplier)
-    totalMoney = totalMoney + (moneyAdditioner * moneyMultiplier)
-    totalMoney = Math.round(totalMoney * 100) / 100 // correction bug js
-
-    let moneyWin = (moneyAdditioner * moneyMultiplier)
-
-    moneyWin = Math.round(moneyWin * 100 ) / 100
-
-    money = money + (moneyAdditioner * moneyMultiplier)
-    money = Math.round(money * 100) / 100 
-
-    statsValue[0].innerText = 'Crimes Commis : ' + crime
-    statsValue[1].innerText = 'Argent Récolté : ' + totalMoney + ' $'
-    statsValue[2].innerText = 'Compte en banque : ' + money + ' $'
-    statsValue[3].innerText = 'Multiplicateur (crime) : ' + crimeMultiplier
-    statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
-
-    let displayMoneyWin = () => {
-        let axeXy = document.querySelector('.axe-x-y')
-        displayAnim.addEventListener('click', (ev) => {
-
-            let x = ev.clientX
-            let y = ev.clientY
-
-            axeXy.style.position = "absolute";
-            axeXy.style.left = x - 30 + 'px';
-            axeXy.style.top = y - 60 + 'px';
+    /**ITEM PARAM
+     * 
+     * @param {string} name 
+     * @param {selector} div 
+     * @param {int} price - prix de l'item
+     * @param {int} maxCount - number of item can we buy
+     *
+     ***BONUS PARAM
+     * 
+     * @param {*} entity 
+     * @param {*} bonusValue - value of this bonus
+     * 
+     **/
+    
+    transportBag = new Item('Transport Bag', '#itemTransportBag', 300, 10)
+    transportBag.Bonus = new AddToMultiplier (transportBag, 0.3)
+    ECM = new Item('E.C.M', '#itemECM', 2000, 1, 1)
+    ECM.Bonus = new AddToMultiplier(transportBag, 2)
+    drill = new Item('Basic Drill' ,'#itemDrill', 10000 ,3)
+    drill.Bonus = new AddToMultiplier(drill, 5)
 
 
 
-        })
-        axeXy.innerText = moneyWin + ' $'
+    /**CAPACITY PARAM
+     * 
+     * @param {selector} div 
+     * @param {int} duration - in ms
+     * @param {int} reloading - in ms
+     * @param {int} bonusValue - value of THIS bonus
+     */
 
-    }
-    displayMoneyWin()
+    SwanSong = new MultiplierMoneyMultiplier('#capSwanSong', 6000, 60000, 2);
+    Chameleon = new MultiplierMoneyMultiplier('#capChameleon', 30000, 180000, 1.3);
+    Partner = new MultiplierMoneyMultiplier ('#capPartner',1800000,1801000,1.1);
 
-}
+    ////////////////////////////////////////////////////////////
+    //injection préliminaire//
 
+    dallas.div.innerText += ' : ' + dallas.price + ' $ \n Level : ' + dallas.level
+    chains.div.innerText += ' : ' + chains.price + ' $ \n Level : ' + chains.level
+    hoxton.div.innerText += ' : ' + hoxton.price + ' $ \n Level : ' + hoxton.level
+    wolf.div.innerText += ' : ' + wolf.price + ' $ \n Level : ' + wolf.level
 
-////////////////////////////////////////////////////////////
-                    //Auto Clickers//
+    houston.div.innerText += 'Recruit ' + houston.name + ' : ' + houston.price + ' $ \n Level : ' + houston.level
+    wick.div.innerText += 'Recruit ' + wick.name + ' : ' + wick.price + ' $ \n Level : ' + wick.level
+    clover.div.innerText += 'Recruit ' + clover.name + ' : ' + clover.price + ' $ \n Level : ' + clover.level
 
-let autoClickBase = () => {
-    moneyAdditioner = Math.floor(Math.random() * 10) + 1
+    transportBag.div.innerText += ' : ' + transportBag.price + ' $'
+    ECM.div.innerText += ' : ' + ECM.price + ' $'
+    drill.div.innerText += ' : ' + drill.price + ' $'
 
-    crime = crime + (crimeAdditioner * crimeMultiplier)
-    totalMoney = totalMoney + (moneyAdditioner * moneyMultiplier)
-    totalMoney = Math.round(totalMoney * 100) / 100 // correction bug js
+    Stats.onDraw();
 
-    money = money + (moneyAdditioner * moneyMultiplier)
-    money = Math.round(money * 100) / 100 
-
-    statsValue[0].innerText = 'Crimes Commis : ' + crime
-    statsValue[1].innerText = 'Argent Récolté : ' + totalMoney + ' $'
-    statsValue[2].innerText = 'Compte en banque : ' + money + ' $'
-    statsValue[3].innerText = 'Multiplicateur (crime) : ' + crimeMultiplier
-    statsValue[4].innerText = 'Multiplicateur (money) : ' + moneyMultiplier
+    tick = window.setInterval(Tick, 16.7)// -1;
 
 
 }
 
+
+/** - Timer Tick - */
+let Tick = () => {
+
+    /**Tick des statistiques : calcul du temps écouler depuis le dernier tick */
+    Stats.onTick()
+
+    dallas.onTick();
+    chains.onTick();
+    hoxton.onTick();
+    wolf.onTick();
+    houston.onTick();
+    wick.onTick();
+    clover.onTick();
+
+    transportBag.onTick();
+    ECM.onTick();
+    drill.onTick();
+
+    SwanSong.onTick();
+    Chameleon.onTick();
+    Partner.onTick();
+
+    /**fonction Tick() de globalEvent */
+    eventTick();
+
+};
+let tick = -1;
+
+/**Arrondir 2 chiffres après la virgule */
+const roundNumber = (number) => {
+    return Math.round(number * 100) / 100;
+}

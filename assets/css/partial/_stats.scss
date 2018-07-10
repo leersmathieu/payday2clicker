@@ -12,11 +12,21 @@
     #allStats {
         padding-top: 5%;
         p {
-            padding-top: 5%;
             padding-left: 3%;
             border-bottom: 3px solid gray;
-            padding-bottom: 5%;
+            padding-bottom: 6%;
+            padding-top: 6%;
             font-size: 90%;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 600px) {
+    #stats {
+        #allStats {
+            p {
+                font-size: 23px;             
+            }
         }
     }
 }
