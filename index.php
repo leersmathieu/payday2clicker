@@ -5,7 +5,7 @@
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Payday Clicker ALPHA v0.3.8 </title>
+        <title>Payday Clicker ALPHA v0.3.9 </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- bootstrap -->
@@ -138,24 +138,18 @@
         </div>
 
         <footer>
-            Payday Clicker ALPHA v0.3.8
+            Payday Clicker ALPHA v0.3.9
         </footer>
 
         <script src="assets/js/Stats.js"></script>
-        <script src="assets/js/globalEvent_2.js"></script>
-        <script src="assets/js/Capacity_2.js"></script>
+        <script src="assets/js/globalEvent.js"></script>
+        <script src="assets/js/Capacity.js"></script>
         <script src="assets/js/Entity.js"></script>
         <script src="assets/js/Bonus.js"></script>
         <script src="assets/js/Heister.js"></script>
         <script src="assets/js/Item.js"></script>
         <script src="assets/js/AllCapacity.js"></script>
-        <script src="assets/js/main_2.js"></script>
-            
-        <!-- <script src="assets/js/main.js"></script>
-        <script src="assets/js/crew.js"></script>
-        <script src="assets/js/stuff.js"></script>
-        <script src="assets/js/capacity.js"></script>
-        <script src="assets/js/globalEvent.js"></script> -->
+        <script src="assets/js/main.js"></script>
 
     </body>
 

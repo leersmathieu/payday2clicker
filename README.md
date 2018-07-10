@@ -1,5 +1,4 @@
 # payday2clicker
 Standalone repo for my clicker game
 
-
-TODO: TABLEAU pour BONUS
+play it here : <insert link>
