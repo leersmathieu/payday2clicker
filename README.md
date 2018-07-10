@@ -8,7 +8,7 @@ Poney : Following development
 
 *A big thank's to all testers / feedbackers*
 
-play it for free here : [GAME](leersmathieu.com/payday2clicker)
+play it for free here : [GAME](https://leersmathieu.com/payday2clicker)
 
 ## PATCHNOTE
 
