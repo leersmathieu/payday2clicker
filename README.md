@@ -3,12 +3,12 @@ Standalone repo for my clicker game
 
 # Contributor
 
-Morgant Mignot : Master of OOP
+Morgant Mignot : Master of OOP  
 Poney : Following development
 
-A big thank's to all testers / feedbackers
+*A big thank's to all testers / feedbackers*
 
-play it here for free : [GAME](leersmathieu.com/payday2clicker)
+play it for free here : [GAME](leersmathieu.com/payday2clicker)
 
 ## PATCHNOTE
 
