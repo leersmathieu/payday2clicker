@@ -1,14 +1,15 @@
-# payday2clicker
-Standalone repo for my clicker game
+# CLICKER-GAME-PAYDAY-2
+Standalone repo for my clicker game  
+play it for free here : [GAME](https://leersmathieu.com/payday2clicker)
 
-# Contributor
+## CONTRIBUTOR
 
 Morgan Mignot : Master of OOP  
 Poney : Following development
 
 *A big thank's to all testers / feedbackers*
 
-play it for free here : [GAME](https://leersmathieu.com/payday2clicker)
+
 
 ## PATCHNOTE
 
