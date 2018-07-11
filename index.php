@@ -5,7 +5,7 @@
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Payday Clicker ALPHA v0.4.2 </title>
+        <title>Payday Clicker ALPHA v0.4.3 </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- bootstrap -->
@@ -56,7 +56,7 @@
 
                             <button type="button" id="itemTransportBag" onclick=transportBag.onClick()>Transport Bag</button>
                             <button type="button" id="itemECM" onclick=ECM.onClick()>E.C.M</button>
-                            <button type="button" id="itemDrill" onclick=drill.onClick()>Basic Drill</button>
+                            <button type="button" id="itemDrill" onclick=drill.onClick()>Heister Drill</button>
 
                         </div>
                     </div>
@@ -141,7 +141,7 @@
         </div>
 
         <footer>
-            Payday Clicker ALPHA v0.4.2
+            Payday Clicker ALPHA v0.4.3
         </footer>
 
         <script src="assets/js/Stats.js"></script>

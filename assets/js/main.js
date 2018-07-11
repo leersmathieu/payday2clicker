@@ -24,7 +24,7 @@ let Chameleon = null
 let Partner = null
 
 //Stats
-let Stats = new Stat();
+let Stats = new Stat()
 /////////////////////////
 
 window.onload = () => {
@@ -36,7 +36,7 @@ window.onload = () => {
      * @param {Selector} div 
      * @param {Int} price - basic price
      * @param {Int} priceUpgrade - added price (price = price + priceUpgrade)
-     * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s )
+     * @param {Int} clickAuto - autoclick speed ( in ms : 1000 = 1s ) / default = 0
      * @param {string} titleUpgrade - description / default = "Gain 50% more money"
      * 
      * @param {Boolean} buyCrimeBonus  - if true : SET one BONUS crime (OnBuyCrimeBonus) / default = true
@@ -101,9 +101,9 @@ window.onload = () => {
      * @param {int} bonusValue - value of THIS bonus
      */
 
-    SwanSong = new MultiplierMoneyMultiplier('#capSwanSong', 6000, 60000, 2);
-    Chameleon = new MultiplierMoneyMultiplier('#capChameleon', 30000, 180000, 1.3);
-    Partner = new MultiplierMoneyMultiplier ('#capPartner',1800000,1801000,1.1);
+    SwanSong = new MultiplierMoneyMultiplier('#capSwanSong', 6000, 60000, 2)
+    Chameleon = new MultiplierMoneyMultiplier('#capChameleon', 30000, 180000, 1.3)
+    Partner = new MultiplierMoneyMultiplier ('#capPartner',1800000,1801000,1.1)
 
     ////////////////////////////////////////////////////////////
     //injection préliminaire//
@@ -121,9 +121,9 @@ window.onload = () => {
     ECM.div.innerText += ' : ' + ECM.price + ' $'
     drill.div.innerText += ' : ' + drill.price + ' $'
 
-    Stats.onDraw();
+    Stats.onDraw()
 
-    tick = window.setInterval(Tick, 16.7)// -1;
+    tick = window.setInterval(Tick, 16.7)// -1
 
 
 }
@@ -135,29 +135,29 @@ let Tick = () => {
     /**Tick des statistiques : calcul du temps écouler depuis le dernier tick */
     Stats.onTick()
 
-    dallas.onTick();
-    chains.onTick();
-    hoxton.onTick();
-    wolf.onTick();
-    houston.onTick();
-    wick.onTick();
-    clover.onTick();
+    dallas.onTick()
+    chains.onTick()
+    hoxton.onTick()
+    wolf.onTick()
+    houston.onTick()
+    wick.onTick()
+    clover.onTick()
 
-    transportBag.onTick();
-    ECM.onTick();
-    drill.onTick();
+    transportBag.onTick()
+    ECM.onTick()
+    drill.onTick()
 
-    SwanSong.onTick();
-    Chameleon.onTick();
-    Partner.onTick();
+    SwanSong.onTick()
+    Chameleon.onTick()
+    Partner.onTick()
 
     /**fonction Tick() de globalEvent */
-    eventTick();
+    eventTick()
 
-};
-let tick = -1;
+}
+let tick = -1
 
 /**Arrondir 2 chiffres après la virgule */
 const roundNumber = (number) => {
-    return Math.round(number * 100) / 100;
+    return Math.round(number * 100) / 100
 }

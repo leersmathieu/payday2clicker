@@ -20,15 +20,15 @@ class Heister extends Entity
     {
         super(name, div, price)
 
-        this.level = 0;
-        this.crimeMultiplier = 1;
+        this.level = 0
+        this.crimeMultiplier = 1
 
-        this.clickAutoInterval = clickAuto;
-        this.priceUpgrade = priceUpgrade;
-        this.titleUpgrade = titleUpgrade;
+        this.clickAutoInterval = clickAuto
+        this.priceUpgrade = priceUpgrade
+        this.titleUpgrade = titleUpgrade
 
-        this.buyCrimeBonus = buyCrimeBonus;
-        this.buyMoneyMultiplier = buyMoneyMultiplier; 
+        this.buyCrimeBonus = buyCrimeBonus
+        this.buyMoneyMultiplier = buyMoneyMultiplier 
 
     }
 
@@ -37,11 +37,11 @@ class Heister extends Entity
     /**Timer */
     onTick()
     {
-        super.onTick();
+        super.onTick()
         if(this.active && this.clickAutoInterval !== 0 && this.tick >= this.clickAutoInterval)
         {
-            this.tick -= this.clickAutoInterval;
-            this.onAutoClick();
+            this.tick -= this.clickAutoInterval
+            this.onAutoClick()
         }
     }
 
@@ -49,7 +49,7 @@ class Heister extends Entity
     onDraw()
     {
         this.div.innerText = `Upgrade ${this.name} : ${this.price} $ \n Level : ${this.level}`
-        this.div.title = this.titleUpgrade;
+        this.div.title = this.titleUpgrade
     }
 
     /**click sur l'élément */
@@ -59,20 +59,20 @@ class Heister extends Entity
         {
             if (this.level === 0)
             {
-                this.bonus.firstClick();
-                this.tick = 0;
+                this.bonus.firstClick()
+                this.tick = 0
                 this.active=true
             }
 
-            this.bonus.onExecute();
+            this.bonus.onExecute()
 
             let statsmoney = Stats.Money - this.price
-            Stats.Money = roundNumber(statsmoney);
+            Stats.Money = roundNumber(statsmoney)
 
-            this.price = this.price + this.priceUpgrade;
+            this.price = this.price + this.priceUpgrade
             this.level++
 
-            this.onDraw();
+            this.onDraw()
 
         } else {
             alert('Missing Money')

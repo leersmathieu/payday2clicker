@@ -109,6 +109,9 @@ body {
   #crimeNet h1 {
     font-size: 74px;
   }
+  #crimeNet .carousel-indicators {
+    bottom: -26px;
+  }
 }
 
 #menu {

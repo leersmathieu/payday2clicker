@@ -13,16 +13,16 @@ class Item extends Entity
     constructor(name, div, price, maxCount)
    { 
         super(name, div, price)
-        this.counter = 0;
-        this.state = false; // false = unlock; true = lock;
-        this.maxCount = maxCount;
+        this.counter = 0
+        this.state = false // false = unlock true = lock
+        this.maxCount = maxCount
     }
     
 
     /**Timer */
     onTick()
     {
-        super.onTick();
+        super.onTick()
     }
 
     /**draw div */
@@ -44,14 +44,14 @@ class Item extends Entity
 
             if (this.price <= Stats.Money) {
 
-                this.state = true;
+                this.state = true
 
                 if(this.bonus != null){
-                    this.bonus.onExecute();
+                    this.bonus.onExecute()
                 }
 
-                let statsmoney = Stats.Money - this.price;
-                Stats.Money = roundNumber(statsmoney);
+                let statsmoney = Stats.Money - this.price
+                Stats.Money = roundNumber(statsmoney)
 
                 //EXCEPTION
                 
@@ -64,13 +64,13 @@ class Item extends Entity
                 //////////////////
 
                 this.counter++
-                this.onDraw();
+                this.onDraw()
 
             } else {
-                alert('Not enough money');
+                alert('Not enough money')
             }
             if (this.counter == this.maxCount) {
-                this.Hidden();
+                this.Hidden()
             }
         }
     }

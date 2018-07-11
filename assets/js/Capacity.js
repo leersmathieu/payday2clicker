@@ -10,19 +10,19 @@ class Capacity
     
     constructor(div, duration=0, reloading=0)
     {
-        this.div = document.querySelector(div);
-        this.available = true;
+        this.div = document.querySelector(div)
+        this.available = true
      
         /**End*/
-        this.activeEnd = false;
-        this.tickEnd = 0;
-        this.duration = duration;
+        this.activeEnd = false
+        this.tickEnd = 0
+        this.duration = duration
         /**Reset */
-        this.activeReset = false;
-        this.tickReset = 0;
-        this.reloading = reloading;
+        this.activeReset = false
+        this.tickReset = 0
+        this.reloading = reloading
 
-        this.effect = null;
+        this.effect = null
     }
 
     /**Timer */
@@ -33,16 +33,16 @@ class Capacity
         this.tickEnd += Stats.CurrentTick
         if(this.activeEnd && this.tickEnd >= this.duration)
         {
-            this.tickEnd -= this.duration;
-            this.activeEnd = false;
-            this.onEnd();
+            this.tickEnd -= this.duration
+            this.activeEnd = false
+            this.onEnd()
         }
         this.tickReset += Stats.CurrentTick
         if(this.activeReset && this.tickReset >= this.reloading)
         {
-            this.tickReset -= this.reloading;
-            this.activeReset = false;
-            this.onReset();
+            this.tickReset -= this.reloading
+            this.activeReset = false
+            this.onReset()
         }
     }
 
@@ -53,18 +53,18 @@ class Capacity
     onClick()
     {
         if (this.available){
-            this.available = false;
+            this.available = false
             this.div.style.opacity = 0.5
             this.div.style.backgroundColor = 'red'
 
             /** ajout du bonus  */
-            this.onStart();
+            this.onStart()
             /** lance le timer de la fonction onEnd() */
-            this.activeEnd = true;
-            this.tickEnd = 0;
+            this.activeEnd = true
+            this.tickEnd = 0
             /** lance le timer de la fonction onReset() */
-            this.activeReset = true;
-            this.tickReset = 0;
+            this.activeReset = true
+            this.tickReset = 0
 
         } else if (!this.available) {
             alert('The capacity is reloading')
@@ -73,18 +73,18 @@ class Capacity
 
     onUnLock()
     {
-        this.div.style.visibility = 'visible';
+        this.div.style.visibility = 'visible'
     }
 
     onReset()
     {
-        this.available = true;
-        this.div.style.opacity = 1;
-        this.div.style.backgroundColor = 'rgb(255, 255, 51)';
+        this.available = true
+        this.div.style.opacity = 1
+        this.div.style.backgroundColor = 'rgb(255, 255, 51)'
     }
     onStart(){}
     onEnd()
     {
-        this.div.style.backgroundColor = 'gray';
+        this.div.style.backgroundColor = 'gray'
     }
 }

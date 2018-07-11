@@ -9,11 +9,9 @@ Poney : Following development
 
 *A big thank's to all testers / feedbackers*
 
-
-
 ## PATCHNOTE
 
-**ALPHA : V0.1.0 => V0.4.2**
+**ALPHA : V0.1.0 => V0.4.3**
 
 - Complete code restructuration (Procedural => oop)
 - Design fully revisited

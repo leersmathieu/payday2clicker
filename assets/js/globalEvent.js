@@ -32,8 +32,8 @@ let blockerEv5 = 0
 const globalEvent = () => {
     if (dallas.level >= 1 && chains.level >= 1 && hoxton.level >= 1 && wolf.level >= 1 && blockerEv1 == 0) {
         alert('Basic Payday gang recruited \n New character unlock')
-        houston.onUnLock();
-        Chameleon.onUnLock();
+        houston.onUnLock()
+        Chameleon.onUnLock()
         blockerEv1++
     }
     if (dallas.level == 3 && blockerEv2 == 0) {
@@ -78,23 +78,23 @@ const newLevel = ()  => {
     }
 } 
 
-let globalEventTime = 400;
-let globalEventTick = 0;
-let newLevelTime = 400;
-let newLevelTick = 0;
+let globalEventTime = 400
+let globalEventTick = 0
+let newLevelTime = 400
+let newLevelTick = 0
 
 
 const eventTick = () => {
 
-    globalEventTick += Stats.CurrentTick;
+    globalEventTick += Stats.CurrentTick
 
     if(globalEventTick >= globalEventTime)
-        globalEvent();
+        globalEvent()
     
-    newLevelTick += Stats.CurrentTick;
+    newLevelTick += Stats.CurrentTick
 
     if(newLevelTick >= newLevelTime)
-        newLevel();
+        newLevel()
 }
 
 
@@ -115,7 +115,7 @@ let cursorClick = () => {
     let money = Stats.MoneyAdditioner * Stats.MoneyMultiplier
     money = roundNumber(money)
 
-    Stats.TotalMoney += money;
+    Stats.TotalMoney += money
     Stats.TotalMoney = roundNumber(Stats.TotalMoney) 
     Stats.Money += money 
     Stats.Money = roundNumber(Stats.Money)
@@ -127,9 +127,9 @@ let cursorClick = () => {
             let x = ev.clientX
             let y = ev.clientY
 
-            axeXy.style.position = "absolute";
-            axeXy.style.left = x - 30 + 'px';
-            axeXy.style.top = y - 60 + 'px';
+            axeXy.style.position = "absolute"
+            axeXy.style.left = x - 30 + 'px'
+            axeXy.style.top = y - 60 + 'px'
         })
         axeXy.innerText = moneyWin + ' $'
     }

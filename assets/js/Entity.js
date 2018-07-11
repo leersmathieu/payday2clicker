@@ -7,24 +7,24 @@ class Entity
      * @param {int} price 
      */
     constructor(name, div, price) {
-        this.name = name;
-        this.price = price;
-        this.div = document.querySelector(div);
-        this.active = false;
+        this.name = name
+        this.price = price
+        this.div = document.querySelector(div)
+        this.active = false
 
        
-        this.tick = 0; //total de tick depuis le dernier reset. (cf : resetTick() )
+        this.tick = 0 //total de tick depuis le dernier reset. (cf : resetTick() )
     
         /**fonction bonus */
-        this.bonus = null; //this.bonus = new Bonus(this);
+        this.bonus = null //this.bonus = new Bonus(this)
     }
-    get Bonus(){ return this.bonus; }
-    set Bonus(value){ this.bonus = value; }
+    get Bonus(){ return this.bonus }
+    set Bonus(value){ this.bonus = value }
     
     /**reset le total de tick */
     resetTick()
     {
-        this.tick = 0;
+        this.tick = 0
     }
     Visibility() {
         this.div.style.visibility = 'visible'
@@ -45,7 +45,7 @@ class Entity
     /**click sur l'élément */
     onClick()
     {
-        this.bonus();
+        this.bonus()
     }
 
     onUnLock()

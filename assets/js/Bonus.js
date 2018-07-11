@@ -75,7 +75,6 @@ class CloverBonus extends Bonus {
     onExecute() {
         clover.clickAutoInterval -= 200 
         
-        // Stats.MoneyMultiplier = roundNumber(bonusvalue)
 
 
     }
